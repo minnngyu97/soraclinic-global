@@ -13,7 +13,7 @@
     <li>Figma (UI/UX Design)</li>
 </ul>
 
-<h2>:busts_in_silhouette: Technologies Used</h2>
+<h2>:busts_in_silhouette: Team</h2>
 <ul>
     <li>기획 팀장, 디자인 : 조태정</li>
     <li>멀티 팀장, 개발, 디자인 : 수산나</li>
@@ -31,18 +31,27 @@
         </a>
     </li>
 </ul>
-
+<h2>:bookmark: 커밋관리정보</h2>
+<ul>
+    <li>[0.0] 환경 세팅은 0. Readme 초안</li>
+    <li>[1.0] 메인페이지는 앞에 1로 시작</li>
+    <li>[2.0] 상세페이지는 앞에 2로 시작</li>
+    <li>[3.0] 기획&이벤트 페이지는 앞에 3으로 시작</li>
+</ul>
 
 <h2>:file_folder: Folder Structure (Simplified)</h2>
 <pre><code>
 soraclinic-global/
 ├── index.html
 ├── css/
-│   └── style.css
+│   └── font.css
+│   └── main.css
+│   └── global.css
+│   └── common.css
 ├── assets/
 │   ├── images/
 │   └── fonts/
 ├── js/
-│   └── main.js
-└── README.html
+    └── main.js
+
 </code></pre>
