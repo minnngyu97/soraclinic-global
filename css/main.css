@@ -1,0 +1,130 @@
+
+
+#main {
+  margin-top: 96px;
+}
+
+.sc-slide {
+  width: 100%;
+}
+
+.slide1 .swiper-slide {
+  position: relative;
+  width: 100%;
+}
+
+.slide1 .swiper-slide a {
+  display: block;
+  width: 100%;
+  max-height: 600px;
+  overflow: hidden;
+}
+
+.slide1 .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 16 / 6;
+  max-height: 600px;
+  display: block;
+}
+
+.sc-slide .swiper-pagination-bullet {
+  opacity: 1;
+  margin: 0 4px;
+  border-radius: 4px;
+  background-color: hsla(0, 0%, 100%, 0.5);
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  font: 0/0 a;
+  transition: width 0.3s ease-in-out;
+}
+.sc-slide .swiper-pagination-bullet-active {
+  width: 20px;
+  background-color: #fff;
+}
+
+/* mingyu */
+.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+}
+
+.nav-link {
+  color: #808080 ;
+  transition: color 0.2s ease;
+}
+.nav-link:hover,
+.dropdown:hover > .nav-link {
+  color: #1cbccf;
+}
+
+.dropdown-menu a:hover {
+  color: #1cbccf;
+  background-color: #f8f9fa;
+}
+
+.sub-nav-list img {
+  width: 24px;
+  height: 24px;
+}
+
+.sub-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sub-nav-item {
+  display: inline-block;
+  margin-left: 10px;
+}
+.nav-link.dropdown-toggle::after {
+  display: none;
+}
+
+
+.card-title {
+  font-size: 42px;
+  font-weight: 500;
+}
+
+/*main card 배너 롤오버*/
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/*메인 카드배너 페이드 아웃 애니메이션*/
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 애니메이션 적용 클래스 */
+.fade-in {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* 약간의 지연을 준 경우 */
+.delay-1 {
+  animation-delay: 0.2s;
+}
+.delay-2 {
+  animation-delay: 0.4s;
+}
+.delay-3 {
+  animation-delay: 0.6s;
+}

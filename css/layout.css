@@ -1,0 +1,136 @@
+html { 
+    word-break: keep-all;
+    -ms-scroll-chaining: none;
+    overscroll-behavior: none;
+    letter-spacing: -.02em;
+}
+
+#header {
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    -webkit-transition: height .2s linear .1s,-webkit-transform .2s linear;
+    transition: height .2s linear .1s,-webkit-transform .2s linear;
+    transition: transform .2s linear,height .2s linear .1s;
+    transition: transform .2s linear,height .2s linear .1s,-webkit-transform .2s linear;
+}
+
+header.hide {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.header-group {
+    padding: 20px 10px;
+}
+
+.header-group .header-nav {
+    border-radius: 10px;
+    box-shadow: 0px 2px 40px 0px #08464E14;
+}
+
+.header-group .header-nav .nav-item::before {
+    content: '|';
+    position: absolute;
+    transform: translate(-2px,20px);
+    color: #DCDCDC;
+}
+
+.header-group .header-nav .nav-item:first-child::before {
+    content: none;
+}
+
+/* mingyu */
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+
+.nav-link {
+    padding: 20px;
+    color: #808080 ;
+    transition: color 0.2s ease;
+}
+.nav-link:hover,
+.dropdown:hover > .nav-link {
+    color: #1cbccf;
+}
+
+.dropdown-menu a:hover {
+    display: flex;
+    color: #1cbccf;
+    background-color: #f8f9fa;
+}
+
+.sub-nav-list img {
+    width: 24px;
+    height: 24px;
+}
+
+.sub-nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sub-nav-item {
+    display: inline-block;
+    margin-left: 10px;
+}
+.nav-link.dropdown-toggle::after {
+    display: none;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    white-space: nowrap;
+    z-index: 1000;
+    /* transform: translateX(-62.5%); */
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.nav-item:hover .dropdown-menu {
+    display: flex;
+}
+
+.dropdown-center .dropdown-menu {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dropdown-center:hover .dropdown-menu {
+    display: flex;
+}
+
+
+.btn-info-custom:hover {
+    color: #fff !important;
+    background-color: #1CBCCF;
+    border-color: #1CBCCF;
+}
+
+.custom-lang-btn {
+    display: flex;
+    gap: 5px;
+    background-color: #fff;
+    border-color: #1CBCCF;
+    color: #808080;
+}
+
+.custom-lang-btn:hover {
+    background-color: #1CBCCF;
+}
+
+/* mingyu */
