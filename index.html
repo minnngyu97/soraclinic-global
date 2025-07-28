@@ -28,14 +28,13 @@
     <!-- 플러그인 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <!-- 커스터마이징 -->
-    <link rel="stylesheet" href="https://minnngyu97.github.io/soraclinic-global/css/global.css"/>
-    <link rel="stylesheet" href="https://minnngyu97.github.io/soraclinic-global/css/common.css"/>
-    <link rel="stylesheet" href="https://minnngyu97.github.io/soraclinic-global/css/reset.css"/>
-    <link rel="stylesheet" href="https://minnngyu97.github.io/soraclinic-global/css/layout.css"/>
-    <link rel="stylesheet" href="https://minnngyu97.github.io/soraclinic-global/css/main.css"/>
-    <link rel="stylesheet" href="https://minnngyu97.github.io/soraclinic-global/css/font.css"/>
+    <link rel="stylesheet" href="./css/global.css"/>
+    <link rel="stylesheet" href="./css/common.css"/>
+    <link rel="stylesheet" href="./css/layout.css"/>
+    <link rel="stylesheet" href="./css/main.css"/>
+    <link rel="stylesheet" href="./css/font.css"/>
     <link rel="stylesheet" href="./css/mingyu.css"/>
-    <link rel="stylesheet" href="https://minnngyu97.github.io/soraclinic-global/css/sanna.css"/>
+    <link rel="stylesheet" href="./css/sanna.css"/>
   </head>
   <body>
     <div class="wrap">
@@ -145,7 +144,6 @@
           </h1>
 
           <nav class="header-nav">
-            
             <ul class="nav align-items-center">
               <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
               <li class="nav-item"><a class="nav-link" href="#" role="button">About Us</a></li>
@@ -166,13 +164,12 @@
             </ul>
           </nav>
 
-          <div class="d-flex align-items-center gap-3">
-           
-            <button class="btn btn-info-custom border border-info text-info rounded-pill px-4 py-2 fw-medium">
+          <div class="d-flex align-items-center gap-3">           
+            <button class="btn-info-custom border border-info text-info rounded-pill px-4 py-2 fw-medium">
               BOOK NOW
             </button>
             <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle custom-lang-btn border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <button class="btn-secondary dropdown-toggle custom-lang-btn border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="bi bi-globe"></i>
                 <span class="lang-text">en</span>
               </button>
@@ -227,42 +224,110 @@
           </div>
         </section>
 
-        <section id="sc-event-desc py-5 bg-light">
-          <div class="container text-center">
-            <!--h2 class="mb-4">CARD Banner<h2-->
+        <section id="sc-event-desc" class="py-5">
+          <div class="container text-center">          
             <div class="row g-4 align-items-stretch">
               <div class="col-12 col-sm-6 col-lg-3">
-                <div class="card h-100 shadow-sm card-hover d-flex flex-column">
-                  <div class="card-body d-flex flex-column">
-                    <p class="treat-card-title mb-0">Rejuran Healer 1cc</p>
-                    <p class="event-desc">*Minimum 2cc<p>
-                    <p class="event-price mt-auto text-end"><span class="price-original">155,000</span> ₩ 89,000</p>
+                <div class="card shadow-sm card-hover d-flex flex-column h-100">
+                  <div class="card-body d-flex flex-column justify-content-between pb-0 h-100">
+                    <!-- 뱃지 또는 아이콘 위치 (절대 위치 지정 시 필요) -->
+                    <div class="absolute top-0 start-0 m-2">
+                      <svg width="28" height="36" viewBox="0 0 28 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_295_446)">
+                        <path d="M0 0H28V36L14 29.0323L0 36V0Z" fill="#CBF3F0"/>
+                        <path d="M15.0449 10.1016V20H12.9805V12.0566H12.9258L10.6562 13.4785V11.6602L13.1035 10.1016H15.0449Z" fill="#1CBCCF"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_295_446">
+                        <rect width="28" height="36" rx="5" fill="white"/>
+                        </clipPath>
+                        </defs>
+                      </svg>
+                     </div>
+                     <!-- 콘텐츠 중앙 정렬 영역 -->
+                    <div class="d-flex flex-column justify-content-center align-items-center text-center h-100 px-2">
+                      <h3 class="event-title mb-1">Rejuran Healer 1cc</h3>
+                      <p class="event-desc mb-0">*Minimum 2cc<p>
+                    </div> 
+                     <!-- 가격 표시 (카드 하단에 고정) -->
+                    <p class="event-price mt-auto text-end pt-3"><span class="price-original">155,000</span> ₩ 89,000</p>
                   </div>
                 </div>
               </div>
               <div class="col-12 col-sm-6 col-lg-3">
-                <div class="card  h-100  shadow-sm card-hover d-flex flex-column">
-                  <div class="card-body d-flex flex-column">
-                    <p class="treat-card-title mb-0">Ulthera Prime 100 Shots</p>
-                    <p class="event-desc">Next-level skin<p>
+                <div class="card shadow-sm card-hover d-flex flex-column h-100">
+                  <div class="card-body d-flex flex-column justify-content-between pb-0 h-100">
+                    <div class="absolute top-0 start-0 m-2">
+                      <svg width="28" height="36" viewBox="0 0 28 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_295_449)">
+                        <path d="M0 0H28V36L14 29.0323L0 36V0Z" fill="#CBF3F0"/>
+                        <path d="M10.7793 20L10.7656 18.5098L14.3203 15.2422C15.25 14.3535 15.7422 13.8066 15.7422 13.0273C15.7422 12.1523 15.0723 11.6055 14.1699 11.6055C13.2402 11.6055 12.6387 12.1934 12.6387 13.1367H10.6836C10.6699 11.1953 12.1055 9.96484 14.1973 9.96484C16.3164 9.96484 17.7246 11.168 17.7246 12.8906C17.7246 14.0117 17.1777 14.9414 15.1406 16.7871L13.6367 18.25V18.3047H17.8613V20H10.7793Z" fill="#1CBCCF"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_295_449">
+                        <rect width="28" height="36" rx="5" fill="white"/>
+                        </clipPath>
+                        </defs>
+                      </svg>                        
+                     </div>
+                     <!-- 콘텐츠 중앙 정렬 영역 -->
+                    <div class="d-flex flex-column justify-content-center align-items-center text-center h-100 px-2">
+                      <h3 class="event-title mb-1">Ulthera Prime 100 Shots</h3>
+                      <p class="event-desc mb-0">Next-level skin<p>
+                    </div> 
+                     <!-- 가격 표시 (카드 하단에 고정) -->
                     <p class="event-price mt-auto text-end"><span class="price-original">590,000</span> ₩ 420,000</p>
                   </div>
                 </div>
               </div>
               <div class="col-12 col-sm-6 col-lg-3">
-                <div class="card  h-100  shadow-sm card-hover d-flex flex-column">
-                  <div class="card-body d-flex flex-column">
-                    <p class="treat-card-title mb-0">Face Onda 10kJ</p>
-                    <p class="event-desc">*Minimum 300 Shots<p>
+                <div class="card shadow-sm card-hover d-flex flex-column h-100">
+                  <div class="card-body d-flex flex-column justify-content-between pb-0 h-100">
+                    <div class="absolute top-0 start-0 m-2">
+                      <svg width="28" height="36" viewBox="0 0 28 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_295_452)">
+                        <path d="M0 0H28V36L14 29.0323L0 36V0Z" fill="#CBF3F0"/>
+                        <path d="M14.4434 20.1367C12.2695 20.1367 10.7109 18.9336 10.6699 17.2109H12.748C12.7891 17.9492 13.5 18.4414 14.457 18.4414C15.4414 18.4414 16.1523 17.8809 16.1387 17.0879C16.1523 16.2812 15.4277 15.707 14.2656 15.707H13.3496V14.1895H14.2656C15.2363 14.1895 15.9199 13.6562 15.9199 12.877C15.9199 12.125 15.3457 11.6055 14.4707 11.6055C13.5957 11.6055 12.8711 12.0977 12.8438 12.8496H10.875C10.9023 11.1406 12.4473 9.96484 14.4707 9.96484C16.5352 9.96484 17.916 11.1816 17.9023 12.7539C17.916 13.8613 17.1367 14.6543 16.0293 14.8457V14.9277C17.4785 15.1055 18.2852 15.9941 18.2715 17.2246C18.2852 18.9199 16.6719 20.1367 14.4434 20.1367Z" fill="#1CBCCF"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_295_452">
+                        <rect width="28" height="36" rx="5" fill="white"/>
+                        </clipPath>
+                        </defs>
+                      </svg> 
+                     </div>
+                     <!-- 콘텐츠 중앙 정렬 영역 -->
+                    <div class="d-flex flex-column justify-content-center align-items-center text-center h-100 px-2">
+                      <h3 class="event-title mb-1">Face Onda 10kJ</h3>
+                      <p class="event-desc mb-0">*Minimum 300 Shots<p>
+                    </div> 
+                     <!-- 가격 표시 (카드 하단에 고정) -->
                     <p class="event-price mt-auto text-end"><span class="price-original">190,000</span> ₩ 99,000 </p>
                   </div>
                 </div>
               </div>
               <div class="col-12 col-sm-6 col-lg-3">
-                <div class="card  h-100  shadow-sm card-hover d-flex flex-column">
-                  <div class="card-body d-flex flex-column">
-                    <p class="treat-card-title mb-0">InMode Full Face 1 Mode</p>
-                    <p class="event-desc">Precise Lifting<p>
+                <div class="card shadow-sm card-hover d-flex flex-column h-100">
+                  <div class="card-body d-flex flex-column justify-content-between pb-0 h-100">
+                    <div class="absolute top-0 start-0 m-2">
+                      <svg width="28" height="36" viewBox="0 0 28 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_295_455)">
+                        <path d="M0 0H28V36L14 29.0323L0 36V0Z" fill="#CBF3F0"/>
+                        <path d="M10.6152 18.25V16.623L14.7988 10.1016H17.3828V16.5957H18.6406V18.25H17.3828V20H15.4277V18.25H10.6152ZM12.6934 16.5957H15.4551V12.3574H15.3594L12.6934 16.5137V16.5957Z" fill="#1CBCCF"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_295_455">
+                        <rect width="28" height="36" rx="5" fill="white"/>
+                        </clipPath>
+                        </defs>
+                      </svg>
+                     </div>
+                      <!-- 콘텐츠 중앙 정렬 영역 -->
+                    <div class="d-flex flex-column justify-content-center align-items-center text-center h-100 px-2">
+                      <h3 class="event-title mb-1">InMode Full Face 1 Mode</h3>
+                      <p class="event-desc mb-0">Precise Lifting<p>
+                    </div> 
+                    <!-- 가격 표시 (카드 하단에 고정) -->
                     <p class="event-price mt-auto text-end"><span class="price-original">135,000</span> ₩ 79,000</p>
                   </div>
                 </div>
@@ -271,10 +336,10 @@
           </div>
         </section>
 
-        <section id="sc-services py-3 d-flex justify-content-center align-items-center">
-          <div class="container text-center bg-main">
+        <section id="sc-services" class="py-3 d-flex justify-content-center align-items-center">
+          <div class="container text-center services-bg">
             <div class="row d-flex flex-column">
-              <p class="mb-4 best-title">Best Treatments in our Clinic!</p>
+              <p class="mb-4 section-title">Best Treatments in our Clinic!</p>
             </div>
           </div>
         </section>
