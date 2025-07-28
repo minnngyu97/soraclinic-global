@@ -1,0 +1,8 @@
+#header .dropdown button {
+    padding: 5px 10px;
+}
+
+.custom-lang-btn:hover {
+    background-color: transparent;
+    color: var(--color-font-sub);
+}
