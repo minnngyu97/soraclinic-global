@@ -27,7 +27,7 @@
         </a></li>
     </li> 
     <li> Git Address: <a href="https://github.com/minnngyu97/soraclinic-global.git" target="_blank">
-            View Figma Design
+            Go to Git
         </a>
     </li>
 </ul>
@@ -37,6 +37,7 @@
     <li>[1.0] 메인페이지는 앞에 1로 시작</li>
     <li>[2.0] 상세페이지는 앞에 2로 시작</li>
     <li>[3.0] 기획&이벤트 페이지는 앞에 3으로 시작</li>
+    <li>[4.0] 이미지 </li>
 </ul>
 
 <h2>:file_folder: Folder Structure (Simplified)</h2>
