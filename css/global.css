@@ -33,3 +33,19 @@
     --font-weight-bold: 700;
     --font-weight-black: 900;
 }
+
+/* TJ - Font CSS 추가  */
+/* 변수 : 로컬베리어블 */
+:root{
+  --active-color:#2ec4b6;
+  --basic-font-color:#222;
+  --light-font-color:#777f81;
+  --basic-fs : 17px;
+  --md-fs : 14px;  
+  --sm-fs : 13px;
+  --basic-fw : 400;
+  --basic-font-korea : 'Pretendard';
+  --basic-font-en: '';
+  --sub-color: #f4eacd;
+
+}

@@ -6,3 +6,25 @@
     background-color: transparent;
     color: var(--color-font-sub);
 }
+
+#ft {
+    background: #E6F7F9;
+}
+
+#ft .ft-info-group {
+    color: var(--color-font-sub)
+}
+
+#ft .ft-info-group .info-group-left {
+    font-size: var(--footer);
+    font-weight: var(--font-weight-light);
+}
+
+#ft .ft-info-group .info-group-right {
+    font-size: var(--clinic-hours);
+    font-weight: var(--font-weight-regular);
+}
+
+.ft-font-color {
+    color: var(--color-font-sub)
+}

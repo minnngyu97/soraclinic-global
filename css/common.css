@@ -99,3 +99,87 @@ h2, .section-title, .event-title {
   clip: rect(0, 0, 0, 0);
   margin: -1px;
 }
+
+/* 공통 클래스 : 로컬스타일 */
+.active-color{
+  color:var(--active-color)
+}
+.sub-color{
+  color: var(--sub-color);
+}
+.active-bg{
+  background-color: var(--active-color);
+}
+.sub-bg{
+  background-color: var(--sub-color);
+}
+.sub_w_title{
+  font-size: var(--sm-fs);
+}
+.big_title{
+  font-size: 45px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  text-transform: capitalize;
+}
+.basic_title{
+  color: var(--light-font-color);
+  font-size: var(--sm-fs);
+  text-transform: capitalize;
+}
+
+.fw100 {
+  font-weight: 100 !important;
+}
+
+.fw200 {
+  font-weight: 200 !important;
+}
+
+.fw300 {
+  font-weight: 300 !important;
+}
+
+.fw400 {
+  font-weight: 400 !important;
+}
+
+.fw500 {
+  font-weight: 500 !important;
+}
+
+.fw600 {
+  font-weight: 600 !important;
+}
+
+.fw700 {
+  font-weight: 700 !important;
+}
+
+.fw800 {
+  font-weight: 800 !important;
+}
+
+.fw900 {
+  font-weight: 900 !important;
+}
+
+/* 전체 폰트 */
+body, html {
+  font-family: var(--basic-font-korea), Arial, sans-serif;
+  color: var(--basic-font-color);
+}
+
+.sub_w_title{
+  opacity: 0;
+  transition: 0.5s;
+  transform: translateY(-100%);
+  transition-delay: 0.8s;
+}
+.swiper-slide-active .sub_w_title{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
