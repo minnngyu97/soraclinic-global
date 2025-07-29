@@ -100,6 +100,13 @@ h2, .section-title, .event-title {
   margin: -1px;
 }
 
+a,
+a:focus,
+a:active,
+a:hover {
+  text-decoration: none;
+}
+
 /* 공통 클래스 : 로컬스타일 */
 .active-color{
   color:var(--active-color)
