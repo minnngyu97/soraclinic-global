@@ -10,10 +10,6 @@ body, html, p {
   line-height: 1.1;
 }
 
-a {
-  text-decoration: none;
-}
-
 .position-unset {
   position: unset !important;
 }
@@ -74,13 +70,6 @@ footer {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   margin: -1px;
-}
-
-a,
-a:focus,
-a:active,
-a:hover {
-  text-decoration: none;
 }
 
 /* 공통 클래스 : 로컬스타일 */
@@ -148,10 +137,10 @@ a:hover {
 }
 
 /* 전체 폰트 */
-body, html {
+/* body, html {
   font-family: var(--basic-font-korea), Arial, sans-serif;
   color: var(--basic-font-color);
-}
+} */
 
 .sub_w_title{
   opacity: 0;

@@ -41,7 +41,6 @@ header.hide {
     content: none;
 }
 
-/* mingyu */
 .dropdown:hover .dropdown-menu {
     display: block;
     margin-top: 0;
@@ -94,7 +93,6 @@ header.hide {
     background: white;
     white-space: nowrap;
     z-index: 1000;
-    /* transform: translateX(-62.5%); */
 }
 
 .dropdown-toggle::after {
@@ -119,6 +117,7 @@ header.hide {
     color: #fff !important;
     background-color: #1CBCCF;
     border-color: #1CBCCF;
+    transition: ease-in-out 0.2s;
 }
 
 .custom-lang-btn {
@@ -129,8 +128,24 @@ header.hide {
     color: #808080;
 }
 
-/* .custom-lang-btn:hover {
-    background-color: #1CBCCF;
-} */
+#ft {
+    background: #E6F7F9;
+}
 
-/* mingyu */
+#ft .ft-info-group {
+    color: var(--color-font-sub)
+}
+
+#ft .ft-info-group .info-group-left {
+    font-size: var(--footer);
+    font-weight: var(--font-weight-light);
+}
+
+#ft .ft-info-group .info-group-right {
+    font-size: var(--clinic-hours);
+    font-weight: var(--font-weight-regular);
+}
+
+.ft-font-color {
+    color: var(--color-font-sub)
+}
