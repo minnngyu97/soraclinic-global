@@ -1,94 +1,70 @@
+@import url(global.css);
+
 /* TJ - Font CSS 추가  */
 /* 전체 폰트 */
-body, html {
+body, html, p {
   font-family: var(--basic-font);
   color: var(--basic-color);
-  background: #FAFAFA;
+  font-size: var(--body-text);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.1;
 }
 
+a {
+  text-decoration: none;
+}
+
+.position-unset {
+  position: unset !important;
+}
+.afterno:after{
+  display:none  !important;
+}
+.backgroundno{
+   background :none !important
+}
+
+/*섹션 위아래 여백*/
+#sc-event-desc, #sc-services {
+  padding: 30px 0;
+}
+
+/*포지션*/
+.absolute {
+  position: absolute !important;
+}
+.left1 {
+  left: 0.5rem;
+}
+.top1 {
+  top: 0.5rem;
+}
 /* 메인 내비게이션 */
-nav, .navbar, .nav-link {
-  font-size: 18px;
-  font-weight: 300;
-  letter-spacing: 0.2px;
+.nav {
+  font-size: var(--main-menu);
+  font-weight: var(--font-weight-light);
+  letter-spacing: 1.1px;
 }
 
-/* BOOK NOW 버튼 */
-.btn, .btn-main {
-  font-size: 18px;
-  font-weight: 600;
-  border-radius: 12px;
-  padding: 12px 30px;
-}
-
-/* Hero(이벤트 배너) 제목 */
-h1, .main-title, .hero-title {
-  font-size: 64px;
-  font-weight: 600;
+/* 제목 */
+.content-title {
+  font-size: var(--event-title);
+  font-weight: var(--font-weight-semibold);
   letter-spacing: 0.5px;
   margin-bottom: 8px;
 }
 
-/* 중간 카드 event */
-h2, .section-title, .event-title {
-  font-size: 32px;
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
-/* 설명 부분*/
-.event-desc, .hero-desc, .desc-large {
-  font-size: 16px;
-  font-weight: 300;
-  color: #808080;
-}
-
-/* 이벤트 날짜 등 작은 정보 */
-.event-date, .caption, .meta {
-  font-size: 20px;
-  font-weight: 400;
-  color: #777f81;
-}
-
-/* 원가 텍스트 */
-.price-original {
-  font-size: 14px;
-  font-weight: 200;
-  color: #777f81;
-  text-decoration: line-through;
-  /*padding-left:5px;*/
-}
-
-/* Best Treatments 섹션 타이틀 */
-.treatments-title {
-  font-size: 44px;
-  font-weight: 500;
-}
-
-/* 시술 제목 타이틀 */
-.treat-card-title {
-  font-size: 24px;
-  font-weight: 400;
-  color: #333333;
-  line-height: 1.2;
-}
-
-/*best 섹션 타이틀*/
-.best-title {
+/*섹션 타이틀 */
+.section-title {
+  font-size: var(--subtitle-h4);
+  font-weight: var(--font-weight-medium);
   color: #fff;
 }
 
-/* 기타 본문 */
-.body-text, p {
-  font-size:20px;
-  font-weight: 400;
-}
 
 /* 푸터 */
-.footer {
-  font-size: 20px;
-  font-weight: 400;
-  color: #333333;
+footer {
+  color:var(--basic-color);
 }
 
 .blind {
