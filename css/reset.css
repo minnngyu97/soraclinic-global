@@ -126,3 +126,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0
 }
+
+.dropdown-menu .dropdown-item:active {
+  background-color: transparent !important;
+  color: inherit !important;
+  text-decoration: none;
+}

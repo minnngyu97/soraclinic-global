@@ -48,48 +48,6 @@
   transition: background-color 0.6s ease-in-out 0.2s;
 }
 
-.dropdown:hover .dropdown-menu {
-  display: block;
-  margin-top: 0;
-}
-
-.nav-link {
-  color: #808080 ;
-  transition: color 0.2s ease;
-}
-.nav-link:hover,
-.dropdown:hover > .nav-link {
-  color: #1cbccf;
-}
-
-.dropdown-menu a:hover {
-  color: #1cbccf;
-  background-color: #f8f9fa;
-}
-
-.sub-nav-list img {
-  width: 24px;
-  height: 24px;
-}
-
-#header .dropdown button {
-  padding: 5px 10px;
-}
-
-.custom-lang-btn:hover {
-  background-color: transparent;
-  color: var(--color-font-sub);
-}
-
-.sub-nav-item {
-  display: inline-block;
-  margin-left: 10px;
-}
-.nav-link.dropdown-toggle::after {
-  display: none;
-}
-
-
 .card-title {
   font-size: 42px;
   font-weight: 500;

@@ -2,12 +2,48 @@
 
 /* TJ - Font CSS 추가  */
 /* 전체 폰트 */
-body, html, p {
+body, html {
   font-family: var(--basic-font);
   color: var(--basic-color);
   font-size: var(--body-text);
   font-weight: var(--font-weight-regular);
   line-height: 1.1;
+}
+
+.fw100 {
+  font-weight: 100 !important;
+}
+
+.fw200 {
+  font-weight: 200 !important;
+}
+
+.fw300 {
+  font-weight: 300 !important;
+}
+
+.fw400 {
+  font-weight: 400 !important;
+}
+
+.fw500 {
+  font-weight: 500 !important;
+}
+
+.fw600 {
+  font-weight: 600 !important;
+}
+
+.fw700 {
+  font-weight: 700 !important;
+}
+
+.fw800 {
+  font-weight: 800 !important;
+}
+
+.fw900 {
+  font-weight: 900 !important;
 }
 
 .position-unset {
@@ -17,11 +53,11 @@ body, html, p {
   display:none  !important;
 }
 .backgroundno{
-   background :none !important
+  background :none !important
 }
 
 /*섹션 위아래 여백*/
-#sc-event-desc, #sc-services {
+#sc-event-desc, #our-value {
   padding: 30px 0;
 }
 
@@ -76,6 +112,10 @@ footer {
 .active-color{
   color:var(--active-color)
 }
+
+.activesub-color {
+  color: var(--color-primary) !important;
+}
 .sub-color{
   color: var(--sub-color);
 }
@@ -89,58 +129,22 @@ footer {
   font-size: var(--sm-fs);
 }
 .big_title{
-  font-size: 45px;
-  line-height: 1.2;
-  letter-spacing: -0.03em;
-  text-transform: capitalize;
+  color: #4C5354;;
+  font-size: var(--event-title);
+  line-height: 120%;
+  letter-spacing: 0.64px;
 }
 .basic_title{
-  color: var(--light-font-color);
-  font-size: var(--sm-fs);
-  text-transform: capitalize;
+  color: var(--color-font-subdesc);
+  font-size: var(--event-desc);
+  line-height: 38px;
+  letter-spacing: 0.4px;
 }
 
-.fw100 {
-  font-weight: 100 !important;
+.sc-slide{
+  background-color: rgba(255, 191, 105, 0.30);
+  transition: 0.5s;
 }
-
-.fw200 {
-  font-weight: 200 !important;
-}
-
-.fw300 {
-  font-weight: 300 !important;
-}
-
-.fw400 {
-  font-weight: 400 !important;
-}
-
-.fw500 {
-  font-weight: 500 !important;
-}
-
-.fw600 {
-  font-weight: 600 !important;
-}
-
-.fw700 {
-  font-weight: 700 !important;
-}
-
-.fw800 {
-  font-weight: 800 !important;
-}
-
-.fw900 {
-  font-weight: 900 !important;
-}
-
-/* 전체 폰트 */
-/* body, html {
-  font-family: var(--basic-font-korea), Arial, sans-serif;
-  color: var(--basic-font-color);
-} */
 
 .sub_w_title{
   opacity: 0;
@@ -148,6 +152,7 @@ footer {
   transform: translateY(-100%);
   transition-delay: 0.8s;
 }
+
 .swiper-slide-active .sub_w_title{
   opacity: 1;
   transform: translateY(0);
