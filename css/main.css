@@ -89,12 +89,6 @@
   display: none;
 }
 
-
-.card-title {
-  font-size: 42px;
-  font-weight: 500;
-}
-
 /*main card 배너 롤오버*/
 .card-hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
