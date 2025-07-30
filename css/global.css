@@ -1,0 +1,51 @@
+:root{
+    --basic-font : 'Pretendard', Arial, sans-serif;
+    --basic-color: #222;
+    --color-font-desc: #808080;
+    --color-primary: #2EC4B6;
+    --color-event-bg: #FFBF69;
+    --color-point: #FF9F1C;
+    --color-sub-bg: #CBF3F0;
+    --color-font-sub: #999999;
+    --color-font-main: #4C5354;
+    --color-primary2: #1CBCCF;
+    --color-font-subdesc: #777F81;
+    --container-var-720: 720px; 
+    --container-var-960: 960px;
+    --container-var-1480: 1480px;
+    --main-menu: 18px;
+    --sub-menu: 18px;
+    --event-title: 64px;
+    --event-subtitle: 24px;
+    --event-desc: 20px;
+    --body-text: 17px;
+    --original-price: 14px;
+    --event-subprice: 20px;
+    --subtitle-h4: 44px;
+    --subtitle-h5: 26px;
+    --footer: 14px;
+    --clinic-hours: 16px;
+    --font-weight-thin: 100;
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-black: 900;
+}
+
+/* TJ - Font CSS 추가  */
+/* 변수 : 로컬베리어블 */
+:root{
+  --active-color:#2ec4b6;
+  --basic-font-color:#222;
+  --light-font-color:#777f81;
+  --basic-fs : 17px;
+  --md-fs : 14px;  
+  --sm-fs : 13px;
+  --basic-fw : 400;
+  --basic-font-korea : 'Pretendard';
+  --basic-font-en: '';
+  --sub-color: #f4eacd;
+
+}

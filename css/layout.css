@@ -1,0 +1,152 @@
+html { 
+    word-break: keep-all;
+    -ms-scroll-chaining: none;
+    overscroll-behavior: none;
+    letter-spacing: -.02em;
+}
+
+#header {
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    -webkit-transition: height .2s linear .1s,-webkit-transform .2s linear;
+    transition: height .2s linear .1s,-webkit-transform .2s linear;
+    transition: transform .2s linear,height .2s linear .1s;
+    transition: transform .2s linear,height .2s linear .1s,-webkit-transform .2s linear;
+}
+
+header.hide {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.header-group {
+    padding: 20px 10px;
+}
+
+/* .header-group .header-nav .nav-item::before {
+    content: '|';
+    position: absolute;
+    transform: translate(-2px,20px);
+    color: #DCDCDC;
+} */
+
+.header-group .header-nav .nav-item:first-child::before {
+    content: none;
+}
+
+#header .nav-link {
+    padding: 20px;
+    color: var(--color-font-desc);
+    transition: color 0.2s ease;
+}
+
+#header .nav-link:hover,
+#header .dropdown:hover > .nav-link {
+    color: var(--color-primary);
+}
+
+#header .nav-link:focus {
+    color: var(--color-font-desc);
+}
+
+#header .nav-link.dropdown-toggle::after {
+    display: none;
+}
+
+#header .dropdown-menu {
+    display: none;
+    position: absolute;
+    min-width: fit-content;
+    top: 100%;
+    left: 0;
+    background: white;
+    white-space: nowrap;
+    z-index: 1000;
+}
+
+#header .dropdown-center:hover .dropdown-menu,
+#header .nav-item:hover .dropdown-menu {
+    display: flex;
+    margin-top: 0;
+}
+
+#header .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+
+#header .dropdown-center .dropdown-menu {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#header .dropdown-menu a:hover {
+    color: var(--color-primary);
+    /* background-color: #f8f9fa; */
+}
+
+#header .sub-nav-list img {
+    width: 24px;
+    height: 24px;
+}
+
+#header .sub-nav-item {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+#header .dropdown button {
+    padding: 5px 10px;
+}
+
+/* #header .custom-lang-btn {
+    display: flex;
+    gap: 5px;
+    background-color: #fff;
+    border-color: var(--color-primary2);
+    color: var(--color-font-sub);
+} */
+
+/* #header .custom-lang-btn:hover {
+    background-color: transparent;
+    color: var(--color-font-sub);
+} */
+
+#header .btn-info-custom {
+    color: var(--color-font-desc) !important;
+}
+
+#header .btn-info-custom:hover {
+    color: #fff !important;
+    background-color: var(--color-primary2);
+    border-color: var(--color-primary2);
+    transition: ease-in-out 0.2s;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+#ft {
+    background: #E6F7F9;
+}
+
+#ft .ft-info-group {
+    color: var(--color-font-sub)
+}
+
+#ft .ft-info-group .info-group-left {
+    font-size: var(--footer);
+    font-weight: var(--font-weight-light);
+}
+
+#ft .ft-info-group .info-group-right {
+    font-size: var(--clinic-hours);
+    font-weight: var(--font-weight-regular);
+}
+
+.ft-font-color {
+    color: var(--color-font-sub)
+}
