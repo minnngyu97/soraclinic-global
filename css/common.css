@@ -1,0 +1,135 @@
+@import url(global.css);
+
+/* TJ - Font CSS 추가  */
+/* 전체 폰트 */
+body, html {
+  font-family: var(--basic-font);
+  color: var(--basic-color);
+  font-size: var(--body-text);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.1;
+}
+
+.fw100 {
+  font-weight: 100 !important;
+}
+
+.fw200 {
+  font-weight: 200 !important;
+}
+
+.fw300 {
+  font-weight: 300 !important;
+}
+
+.fw400 {
+  font-weight: 400 !important;
+}
+
+.fw500 {
+  font-weight: 500 !important;
+}
+
+.fw600 {
+  font-weight: 600 !important;
+}
+
+.fw700 {
+  font-weight: 700 !important;
+}
+
+.fw800 {
+  font-weight: 800 !important;
+}
+
+.fw900 {
+  font-weight: 900 !important;
+}
+
+.position-unset {
+  position: unset !important;
+}
+.afterno:after{
+  display:none  !important;
+}
+.backgroundno{
+  background :none !important
+}
+
+/*섹션 위아래 여백*/
+#sc-event-desc, #our-value {
+  padding: 30px 0;
+}
+
+/*포지션*/
+.absolute {
+  position: absolute !important;
+}
+.left1 {
+  left: 0.5rem;
+}
+.top1 {
+  top: 0.5rem;
+}
+/* 메인 내비게이션 */
+.nav {
+  font-size: var(--main-menu);
+  font-weight: var(--font-weight-light);
+  letter-spacing: 1.1px;
+}
+
+/* 제목 */
+.content-title {
+  font-size: var(--event-title);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+/*섹션 타이틀 */
+.section-title {
+  font-size: var(--subtitle-h4);
+  font-weight: var(--font-weight-medium);
+  color: #fff;
+}
+
+
+/* 푸터 */
+footer {
+  color:var(--basic-color);
+}
+
+.blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  margin: -1px;
+}
+
+/* 공통 클래스 : 로컬스타일 */
+.active-color{
+  color:var(--active-color)
+}
+
+.activesub-color {
+  color: var(--color-primary) !important;
+}
+.sub-color{
+  color: var(--sub-color);
+}
+.active-bg{
+  background-color: var(--active-color);
+}
+.sub-bg{
+  background-color: var(--sub-color);
+}
+.sub_w_title{
+  font-size: var(--sm-fs);
+}
+
+
+
+
+
