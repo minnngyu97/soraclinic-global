@@ -472,10 +472,10 @@
           <div class="container py-5 services-con">
             <div class="mb-4 d-flex flex-row justify-content-between px-4"> 
               <div class="w-50">
-                <h2 class="services-tittxt">Best Treatments In Our<br/> Clinic!</h2>
+                <h2 class="services-tit-h2">Best Treatments In Our<br/> Clinic!</h2>
               </div>
               <div class="w-50">
-                <p class="services-desetxt fw200 px-2">Vitae aliquam vestibulum elit adipiscing massa diam in dignissim.<br/> 
+                <p class="services-dese fw200 px-2">Vitae aliquam vestibulum elit adipiscing massa diam in dignissim.<br/> 
                   Risus tellus libero elementum aliquam etiam.<br/>
                   Lectus adipiscing est auctor mi quisque nunc non viverra est.</p>
               </div>
@@ -538,10 +538,115 @@
           </div>
         </section>
 
-        <section id="sc-doctors" class="">
-
+        <section id="sc-doctors">
+          <div class="container py-5 doctors-section">
+            <div class="doctors-title mb-4">
+              <h2 class="fw-semibold">Doctors</h2>
+            </div>
+            <!-- Carousel 시작 -->
+            <div id="doctorCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+              <div class="carousel-inner">        
+                <!-- 슬라이드 1 -->
+                <div class="carousel-item active">
+                  <div class="row justify-content-center g-4">
+                    <!-- Doctor 1 -->
+                    <div class="col-md-6">
+                      <div class="d-flex p-3 border rounded">
+                        <div class="doctor-img me-3">
+                          <img src="../assets/images/img-main/doctor1.png" alt="Doctor 3" class="img-fluid">
+                        </div>
+                        <div class="doctor-info">
+                          <h5 class="doctor-name mb-1">Dr. Leslie Taylor</h5>
+                          <p class="doctor-position mb-3">Doctor</p>
+                          <p class="doctor-intro mb-4">Dolor sit amet, consectetur adipiscing elit. Dignissim massa diam elementum habitant fames ac penatibus et.</p>
+                          <div class="doctors-sns d-flex gap-2">
+                            <i class="bi bi-facebook"></i>
+                            <i class="bi bi-instagram"></i>
+                            <i class="bi bi-twitter"></i>
+                            <i class="bi bi-linkedin"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Doctor 2 -->
+                    <div class="col-md-6">
+                      <div class="d-flex p-3 border rounded">
+                        <div class="doctor-img me-3">
+                          <img src="../assets/images/img-main/doctor2.png" alt="Doctor 3" class="img-fluid">
+                        </div>
+                        <div class="doctor-info">
+                          <h5 class="doctor-name mb-1">Dr. Zachary Brown</h5>
+                          <p class="doctor-position mb-3">Doctor</p>
+                          <p class="doctor-intro mb-4">Dolor sit amet, consectetur adipiscing elit. Dignissim massa diam elementum habitant fames ac penatibus et.</p>
+                          <div class="doctors-sns d-flex gap-2">
+                            <i class="bi bi-facebook"></i>
+                            <i class="bi bi-instagram"></i>
+                            <i class="bi bi-twitter"></i>
+                            <i class="bi bi-linkedin"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 슬라이드 1 끝-->
+                <!-- 슬라이드 2 시작 -->
+                <div class="carousel-item">
+                  <div class="row justify-content-center g-4">
+                    <!-- Doctor 3 -->
+                    <div class="col-md-6">
+                      <div class="d-flex p-3 border rounded">
+                        <div class="doctor-img me-3">
+                          <img src="../assets/images/img-main/doctor1.png" alt="Doctor 3" class="img-fluid">
+                        </div>
+                        <div class="doctor-info">
+                          <h5 class="doctor-name mb-1">Dr. Leslie Taylor</h5>
+                          <p class="doctor-position mb-3">Doctor</p>
+                          <p class="doctor-intro mb-4">Dolor sit amet, consectetur adipiscing elit. Dignissim massa diam elementum habitant fames ac penatibus et.</p>
+                          <div class="doctors-sns d-flex gap-2">
+                            <i class="bi bi-facebook"></i>
+                            <i class="bi bi-instagram"></i>
+                            <i class="bi bi-twitter"></i>
+                            <i class="bi bi-linkedin"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Doctor 4 -->
+                    <div class="col-md-6">
+                      <div class="d-flex p-3 border rounded">
+                        <div class="doctor-img me-3">
+                          <img src="../assets/images/img-main/doctor2.png" alt="Doctor 3" class="img-fluid">
+                        </div>
+                        <div class="doctor-info">
+                          <h5 class="doctor-name mb-1">Dr. Zachary Brown</h5>
+                          <p class="doctor-position mb-3">Doctor</p>
+                          <p class="doctor-intro mb-4">Dolor sit amet, consectetur adipiscing elit. Dignissim massa diam elementum habitant fames ac penatibus et.</p>
+                          <div class="doctors-sns d-flex gap-2">
+                            <i class="bi bi-facebook"></i>
+                            <i class="bi bi-instagram"></i>
+                            <i class="bi bi-twitter"></i>
+                            <i class="bi bi-linkedin"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 슬라이드 2 // -->
+              </div>
+            <!--Pagination -->
+            <div class="carousel-indicators justify-content-center">
+              <button type="button" data-bs-target="#doctorCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#doctorCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#doctorCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>                
+            </div>
+            <!--Pagination // -->
+            </div>
+            <!-- Carousel // -->
+          </div>
         </section>
-
+        
         <section id="sc-contant" class="py-5">
           <div class="contant-group container d-flex justify-content-between flex-wrap px-5 py-5 rounded-4">
             <div class="contant-area d-flex justify-content-center flex-column gap-3">

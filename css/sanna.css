@@ -1,11 +1,15 @@
- @import url(global.css); /* 푸시할때 삭제하기 */
 
+ /* 설명 부분*/
+.event-desc {
+  font-size: var(--body-text);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-font-desc);
+}
 .services-con {
     position: relative;
-    z-index: 1; /* 내부 콘텐츠보다 아래에 깔릴 수 있도록 */
-  }
-  
- .services-con:before {
+    z-index: 1;
+}  
+.services-con:before {
     content: "";
     position: absolute;
     top: 0;
@@ -20,13 +24,13 @@
     opacity: 0.7; 
     overflow: hidden;
 } 
-.services-tittxt {
+.services-tit-h2 {
   font-size: var(--subtitle-h4);
   color: #fff;
   letter-spacing: 0.8px;
   line-height: 3rem;
 } 
-.services-desetxt {
+.services-dese {
   font-size: var(--md-fs);
   color: var(--color-sub-bg);
   line-height: 1rem;
@@ -48,24 +52,16 @@
     background: url(../assets/images/img-main/original_tr2.png) no-repeat 0 0;
     background-size: cover;
   }
-
 .Inmode_bg {
     background: url(../assets/images/img-main/original_tr3.png) no-repeat 0 0;
     background-size: cover;
   }
-
 .Thermage_bg {
     background: url(../assets/images/img-main/original_tr4.png) no-repeat 0 0;
     background-size: cover;
   }
 
- /*aboutus*/ 
- /* #sc-our-story {
-  background-color: #E8F0F1;
-  min-height:calc(100vh - 300px);
- } */
-
- .section-about {
+.section-about {
   background-color: #E8F0F1;
   background-image: url(../assets/images/img-main/about_bg_circle.png);
   /* background-image:
@@ -126,19 +122,69 @@
   right: 0;
   transform: rotate(180deg);
 }
-
 .about_txt_tit {
   color:var(--color-font-desc);
   font-weight: var(--font-weight-medium);
   font-size: 1.5rem;
   line-height: 2.3rem;
 }
-
 .about_txt_desc {
-  color:var(--color-font-desc);
+  color:var(--color-font-sub);
 }
-
 .about_txt_doctor {
   color:var(--color-font-desc);
   font-weight: var(--font-weight-medium);
+}
+.doctors-title {
+  font-size: var(--subtitle-h4);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Doctor Box 전체 레이아웃 */
+.doctor-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.doctor-name {
+  font-size: var(--event-subtitle);
+  font-weight: var(--font-weight-semibold);
+}
+.doctor-position {
+  font-size: var(--original-price);
+  color: var(--color-font-subdesc);
+}
+
+.doctor-intro {
+  font-size: var(--original-price);
+  color: #444;
+}
+/* SNS 아이콘 */
+.doctors-sns i {
+  font-size: 1.2rem;
+  color:#90C6CD;
+  transition: color 0.2s ease;
+}
+.doctors-sns i:hover {
+  color: var(--color-primary);
+}
+
+/* Carousel */
+.carousel-inner {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* Carousel Pagination */
+.carousel-indicators {
+  bottom: auto;
+}
+.carousel-indicators [data-bs-target] {
+  background-color: var(--color-font-main);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.carousel-indicators .active {
+  background-color: var(--color-point);
 }
