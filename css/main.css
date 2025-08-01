@@ -16,7 +16,7 @@
 .slide1 .swiper-slide a {
   display: block;
   width: 100%;
-  max-height: 600px;
+  min-height: 600px;
   overflow: hidden;
 }
 
