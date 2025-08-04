@@ -1,15 +1,66 @@
 @import url(global.css);
 
-/* TJ - Font CSS 추가  */
-/* 전체 폰트 */
-body, html {
-  font-family: var(--basic-font);
-  color: var(--basic-color);
-  font-size: var(--body-text);
-  font-weight: var(--font-weight-regular);
+body {
+  font-family: var(--font-base);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  font-weight: var(--fw-400);
   line-height: 1.1;
+  margin: 0;
+  padding: 0;
 }
 
+/* === Title Elements === */
+.tit {
+  font-size: 2rem;
+  font-weight: var(--fw-600);
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.subtit {
+  font-size: var(--subtitle);
+  font-weight: var(--fw-500);
+  color: var(--color-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.desc {
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  color: var(--color-accent);
+  font-weight: var(--fw-700);
+}
+
+/* === Utility === */
+.text-muted {
+  color: var(--color-muted);
+}
+
+.bg-primary {
+  background-color: var(--color-primary) !important;
+  color: #fff;
+}
+
+.bg-accent {
+  background-color: var(--color-accent) !important;
+  color: #000;
+}
+
+.border-light {
+  border: 1px solid var(--border-light);
+}
+
+.border-dark {
+  border: 1px solid var(--border-dark);
+}
+
+/* 폰트 weight*/
 .fw100 {
   font-weight: 100 !important;
 }
@@ -71,28 +122,28 @@ body, html {
 .top1 {
   top: 0.5rem;
 }
+
 /* 메인 내비게이션 */
 .nav {
-  font-size: var(--main-menu);
-  font-weight: var(--font-weight-light);
+  font-size: var(--navi-menu);
+  font-weight: var(--fw-300);
   letter-spacing: 1.1px;
 }
 
 /* 제목 */
 .content-title {
-  font-size: var(--event-title);
-  font-weight: var(--font-weight-semibold);
+  font-size: var(--event-tit);
+  font-weight: var(--fw-600);
   letter-spacing: 0.5px;
   margin-bottom: 8px;
 }
 
 /*섹션 타이틀 */
 .section-title {
-  font-size: var(--subtitle-h4);
-  font-weight: var(--font-weight-medium);
+  font-size: var(--sub-h4);
+  font-weight: var(--fw-500);
   color: #fff;
 }
-
 
 /* 푸터 */
 footer {
@@ -110,24 +161,26 @@ footer {
 
 /* 공통 클래스 : 로컬스타일 */
 .active-color{
-  color:var(--active-color)
+  color:var(--color-primary)
 }
 
 .activesub-color {
   color: var(--color-primary) !important;
 }
 .sub-color{
-  color: var(--sub-color);
+  color: var(--color-sub-bg);
 }
 .active-bg{
-  background-color: var(--active-color);
+  background-color: var(--color-primary2);
 }
 .sub-bg{
-  background-color: var(--sub-color);
+  background-color: var(--color-sub-bg);
 }
 .sub_w_title{
-  font-size: var(--sm-fs);
+  font-size: var(--font-size-sm);
 }
+
+
 
 /* TJ - 반응형 미디어 쿼리 컨테이너 추가*/
 /* 태블릿 (720px 이하) */
