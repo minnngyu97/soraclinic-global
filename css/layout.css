@@ -38,7 +38,7 @@ header.hide {
 
 #header .nav-link {
     padding: 20px;
-    color: var(--color-font-desc);
+    color: var(--color-desc);
     transition: color 0.2s ease;
 }
 
@@ -48,7 +48,7 @@ header.hide {
 }
 
 #header .nav-link:focus {
-    color: var(--color-font-desc);
+    color: var(--color-desc);
 }
 
 #header .nav-link.dropdown-toggle::after {
@@ -115,7 +115,7 @@ header.hide {
 } */
 
 #header .btn-info-custom {
-    color: var(--color-font-desc) !important;
+    color: var(--color-desc) !important;
 }
 
 #header .btn-info-custom:hover {
@@ -134,19 +134,19 @@ header.hide {
 }
 
 #ft .ft-info-group {
-    color: var(--color-font-sub)
+    color: var(--color-secondary)
 }
 
 #ft .ft-info-group .info-group-left {
-    font-size: var(--footer);
-    font-weight: var(--font-weight-light);
+    font-size: var(--font-size-sm);
+    font-weight: var(--fw-300);
 }
 
 #ft .ft-info-group .info-group-right {
-    font-size: var(--clinic-hours);
-    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-small);
+    font-weight: var(--fw-400);
 }
 
 .ft-font-color {
-    color: var(--color-font-sub)
+    color: var(--color-secondary)
 }
