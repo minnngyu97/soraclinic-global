@@ -57,9 +57,9 @@ body, html {
 }
 
 /*섹션 위아래 여백*/
-#sc-event-desc, #our-value {
+/* #sc-event-desc, #our-value {
   padding: 30px 0;
-}
+} */
 
 /*포지션*/
 .absolute {
