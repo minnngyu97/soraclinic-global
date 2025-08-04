@@ -13,3 +13,13 @@ document.addEventListener('DOMContentLoaded', function () {
         lastScroll = curr;
     });
 });
+
+window.addEventListener('scroll', function () {
+   if (window.scrollY > 50) {
+   document.querySelector('#header').classList.add('active');
+   document.querySelector('.gototop').classList.add('active');
+   } else {
+   document.querySelector('#header').classList.remove('active');
+   document.querySelector('.gototop').classList.remove('active');
+   }
+});
