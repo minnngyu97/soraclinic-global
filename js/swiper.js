@@ -1,4 +1,5 @@
 const slide1 = new Swiper(".slide1", {
+  loop: true,
   pagination: {
     el: ".swiper-pagination",
     clickable: true,

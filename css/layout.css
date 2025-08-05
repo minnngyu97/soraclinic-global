@@ -130,3 +130,9 @@ header.hide {
 .ft-font-color {
     color: var(--color-secondary)
 }
+
+#ft .ft-social img {
+	display: block;
+	width: 24px;
+	height: 24px;
+}
