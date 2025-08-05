@@ -454,14 +454,14 @@
         <section id="sc-services" class="py-3 d-flex justify-content-center align-items-center">
           <div class="container py-5 services-con">
             <div class="mb-4 d-flex flex-row justify-content-between px-4"> 
-              <div class="w-50">
-                <h2 class="services-title">Best Treatments In<br/> Our Clinic!</h2>
+              <div class="w-100">
+                <h2 class="services-title">Best Treatments In Our Clinic!</h2>
               </div>
-              <div class="w-50">
+              <!--div class="w-50">
                 <p class="services-dese px-2">Vitae aliquam vestibulum elit adipiscing massa diam in dignissim.<br/> 
                   Risus tellus libero elementum aliquam etiam.<br/>
                   Lectus adipiscing est auctor mi quisque nunc non viverra est.</p>
-              </div>
+              </!--div-->
             </div>
             <div class="row text-center d-flex justify-content-center services-banner px-4">
                 <!-- Ulthera Card -->
@@ -499,25 +499,51 @@
             </div>
           </div>
         </section>
-
-        <!--about us-->
-        <section id="sc-our-story" class="p-5 d-flex section-about mb-5">
-          <div class="container d-flex flex-column align-items-start about_box v-100 mt-2 gap-5">
-            <!-- <div class="sora_ico mt-3 px-2"><img src="../assets/images/img-icon/logo.png"></div> -->
-            <div class="about_txt_box quote p-4 offset-box">
-              <h5 class="about_txt_tit mb-1">Don't Become Someone Else. Be Your Best Self.</h5>
-              <p class="mb-1 about_txt_desc">Private Beauty GU Clinic emphasizes natural beauty, 
-                celebrating each individual’s unique features instead of adhering to societal norms. 
-                Our mission is to help your personal radiance shine even brighter.</p>
-              <p class="about_txt_doctor mt-3 mb-0">Ki Beom Park Chief Director</p>
-            </div>
-            <div class="about_txt_box quote p-4 ms-5">
-              <h5 class="about_txt_tit">We enhance your unique features.</h5>
-              <p class="about_txt_desc">Every face tells a story. 
-                Just as changing a scene without considering the whole plot creates awkwardness, 
-                treatments that disregard your unique aura and aesthetic preferences rarely satisfy.  
-                At Private Beauty GU Clinic, become your best self, not someone else.</p>
-            </div>
+      
+        <section id="sc-our-story" class="p-5 mb-5 section-about">
+          <div class="container d-flex flex-column flex-md-row gap-5 align-items-start about_box">
+            <!-- 왼쪽 텍스트 박스 -->
+            <div class="d-flex flex-column gap-1 flex-fill">
+              <div class="about_txt_box p-4 quote">
+                <h5 class="about_txt_tit mb-1">Don't Become Someone Else. Be Your Best Self.</h5>
+                <p class="about_txt_desc mb-1">Private Beauty GU Clinic emphasizes natural beauty, celebrating each individual’s unique features instead of adhering to societal norms. Our mission is to help your personal radiance shine even brighter.</p>
+                <p class="about_txt_doctor mt-3 mb-0">Ki Beom Park Chief Director</p>
+              </div>
+              <div class="about_txt_box quote p-4 ms-md-5">
+                <h5 class="about_txt_tit">We enhance your unique features.</h5>
+                <p class="about_txt_desc">Every face tells a story. Just as changing a scene without considering the whole plot creates awkwardness, treatments that disregard your unique aura and aesthetic preferences rarely satisfy. At Private Beauty GU Clinic, become your best self, not someone else.</p>
+              </div>
+            </div>    
+            <!-- 오른쪽 슬라이더 -->
+            <div class="flex-fill mt-3">
+              <div id="clinicCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                <!-- Slides -->
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="./assets/images/img-main/clinic_view_01.png" class="d-block w-100" alt="클리닉 내부1">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./assets/images/img-main/clinic_view_02.png" class="d-block w-100" alt="클리닉 내부2">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./assets/images/img-main/clinic_view_03.png" class="d-block w-100" alt="클리닉 내부3">
+                  </div>
+                </div>
+                <!-- Indicators -->
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#clinicCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#clinicCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#clinicCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <!-- Controls (모바일에서만 표시) -->
+                <button class="carousel-control-prev d-md-none" type="button" data-bs-target="#clinicCarousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next d-md-none" type="button" data-bs-target="#clinicCarousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+              </div>
+            </div>        
           </div>
         </section>
 
@@ -822,9 +848,10 @@
             <li class="">
                 <a href="#" class="quick-link gototop-link d-flex justify-content-center align-items-center">
                     <!-- <img src="./assets/images/img-icon/q_top.svg" alt="gototopicon" style="width: 24px; height: 24px;"> -->
-                    <svg width="22" height="26" viewBox="0 0 22 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9.42855 24.375V5.54793L2.68239 12.524C2.0687 13.1586 1.07395 13.1586 0.460266 12.524C-0.153422 11.8894 -0.153422 10.8607 0.460266 10.2261L9.88894 0.476167L10.0079 0.36429C10.6251 -0.156352 11.5357 -0.118796 12.1111 0.476167L21.5397 10.2261C22.1534 10.8607 22.1534 11.8894 21.5397 12.524C20.926 13.1586 19.9313 13.1586 19.3176 12.524L12.5714 5.54793V24.375C12.5714 25.2725 11.8679 26 11 26C10.1321 26 9.42855 25.2725 9.42855 24.375Z" fill="black"/>
+                    <svg class="icon" viewBox="0 0 22 26" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true">
+                      <path d="M9.43 24.38V5.55L2.68 12.52a1 1 0 0 1-1.46-1.3L9.89 0.48a1 1 0 0 1 1.44 0l9.43 9.75a1 1 0 0 1-1.46 1.3L12.57 5.55v18.83A1.63 1.63 0 0 1 11 26a1.63 1.63 0 0 1-1.57-1.63Z"/>
                     </svg>
+                    
                 </a>
             </li>
         </ul>
