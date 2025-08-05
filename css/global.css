@@ -1,14 +1,14 @@
 :root{
     /* Font settings */
-    --font-base: 'Pretendard', Arial, sans-serif;
+    --font-base: 'Pretendard','Noto Sans JP','Noto Sans SC', Arial, sans-serif;
     --font-size-base: 1rem; /*16px*/
     --font-size-sm: 0.875rem; /*14px*/
     --font-size-lg: 1.25rem; /*20px*/
-    --font-size-small : 13px;
+    --font-size-small: clamp(0.75rem, 1vw, 0.875rem);
     --navi-menu: 18px; /*main-menu&sub-menu*/
-    --event-tit: 64px; /*event-title*/
-    --sub-h2: 44px;
-    --sub-h4: 26px;
+    --event-tit: 4rem; /*64px*/
+    --sub-h2: 2.75rem; /*44px*/
+    --sub-h4: 1.625rem; /*26px*/
     --event-sub-tit: 1.5rem; /*24px*/
 
     /*font weight*/
@@ -28,10 +28,10 @@
     --color-muted: #777F81; /*날짜나 보조설명등*/
     --color-primary: #2EC4B6;
     --color-primary2: #1CBCCF;
-    --color-sub-bg: #B3EBF2;
+    --color-sub-bg: #cbf3f0;
     --color-accent: #FFCA28;
     --color-point: #FF9F1C;
-    --color-sub: #874FFF;
+    --color-sub: #9668fa;
 
     /*컨테이너 크기*/
     --container-var-720: 720px; 
