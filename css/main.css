@@ -399,20 +399,28 @@
 } 
 .services-title {
   font-size: var(--event-tit);
-  font-weight: var(--fw-600);
+  font-weight: var(--fw-500);
   color: #fff;
   letter-spacing: 0.8px;
-  line-height: 3rem;
+  line-height: 3.25rem;
+  padding-bottom: 1.5rem;
+}
+
+.services-h4 {
+  font-size: var(--sub-h4);
+  font-weight: var(--fw-400);
+  color: var(--basic-color);
 }
 .services-dese {
   font-size: var(--font-size-base);
   color: var(--color-desc);
-  line-height: 1rem;
+  font-weight: var(--fw-300);
 } 
 .services-banner > div {
     min-height: calc(100vh - 500px);
     padding: 2vh 0.5vw;
 }
+
 .Ulthera_bg {
     background: url(../assets/images/img-main/original_tr1.png) no-repeat 0 0;
     background-size: cover;
@@ -439,13 +447,44 @@
   /*padding: 4rem 2rem; */
 }
 
+#clinicCarousel {
+  max-width: 500px;
+  margin: 0 auto;
+} 
+
 .about_txt_box {
-  max-width: 800px;
+  max-width: 600px;
   z-index: 1;
+}
+
+.about_txt_tit {
+  color:var(--color-muted);
+  font-weight: var(--fw-500);
+  font-size: var(--event-sub-tit);
+  line-height: 2.3rem;
+}
+.about_txt_desc {
+  color:var(--color-secondary);
+}
+.about_txt_doctor {
+  color:var(--color-muted);
+  font-weight: var(--fw-500);
+}
+
+.carousel-inner img {
+  border-radius: 20px;
 }
 
 .offset-box {
   margin-left: 200px;
+}
+
+@media (max-width: 768px) {
+  .carousel-control-prev,
+  .carousel-control-next {
+    display: none !important;
+  }
+ 
 }
 @media (max-width: 768px) {
   .offset-box {
@@ -464,7 +503,7 @@
   width: 2em;
   height: 2em;
   background-color: currentColor;
-  color:#874fff;
+  color:var(--color-sub);
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 43 31'%3E%3Cpath d='M18.459 0V18.25H9.33399L15.4173 30.4167H6.29232L0.208984 18.25V0H18.459ZM42.7923 0V18.25H33.6673L39.7507 30.4167H30.6257L24.5423 18.25V0H42.7923Z' fill='%2390C6CD'/%3E%3C/svg%3E");
   mask-size: contain;
   mask-repeat: no-repeat;
@@ -478,7 +517,7 @@
   display: inline-block;
   width: 2em;
   height: 2em;
-  color:#874fff;
+  color:var(--color-sub);
   background-color: currentColor;
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 43 31'%3E%3Cg transform='scale(1,-1) translate(0,-31)'%3E%3Cpath d='M18.459 0V18.25H9.33399L15.4173 30.4167H6.29232L0.208984 18.25V0H18.459ZM42.7923 0V18.25H33.6673L39.7507 30.4167H30.6257L24.5423 18.25V0H42.7923Z' fill='%2390C6CD'/%3E%3C/g%3E%3C/svg%3E");
   mask-size: contain;
@@ -488,26 +527,10 @@
   right: 0;
   transform: rotate(180deg);
 }
-.about_txt_tit {
-  color:var(--color-muted);
-  font-weight: var(--fw-500);
-  font-size: var(--event-sub-tit);
-  line-height: 2.3rem;
-}
-.about_txt_desc {
-  color:var(--color-desc);
-}
-.about_txt_doctor {
-  color:var(--color-muted);
-  font-weight: var(--fw-500);
-}
+
 .doctors-title {
   font-size: var(--sub-h4);
   font-weight: var(--fw-600);
-}
-.doctors-title {
-  font-size: var(--subtitle-h4);
-  font-weight: var(--font-weight-semibold);
 }
 
 /* Doctor Box 전체 레이아웃 */
@@ -517,7 +540,7 @@
   object-fit: cover;
 }
 .doctor-name {
-  font-size: var(--event-subtitle);
+  font-size: var(--event-sub-tit);
   font-weight: var(--fw-600);
 }
 .doctor-position {
@@ -559,6 +582,11 @@
   background-color: var(--color-point);
 }
 
+a.quick-link > .icon {
+    color: var(--color-muted); /* 원하는 색상 */
+    width: 20px;
+    height: auto;
+}
 
 #sc-contact  {
   color: var(--color-desc);
