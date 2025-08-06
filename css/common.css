@@ -107,11 +107,6 @@ body {
   background :none !important
 }
 
-/*섹션 위아래 여백*/
-/* #sc-event-desc, #our-value {
-  padding: 30px 0;
-} */
-
 /*포지션*/
 .absolute {
   position: absolute !important;
@@ -180,6 +175,13 @@ footer {
   font-size: var(--font-size-sm);
 }
 
+.multi-line-ellipsis {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* 최대 줄 수 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 
 /* TJ - 반응형 미디어 쿼리 컨테이너 추가*/
@@ -187,8 +189,7 @@ footer {
 @media screen and (max-width: 720px) {
   .container {
     max-width: var(--container-var-720);
-    margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 15px;
   }
   
   .content-title {
@@ -208,24 +209,34 @@ footer {
 @media screen and (max-width: 960px) {
   .container {
     max-width: var(--container-var-960);
-    margin: 0 auto;
-    padding: 0 30px;
+    padding: 0 25px; 
   }
-  
-  .content-title {
-    font-size: 56px;
+  h2.services-title {
+    line-height: 3.5rem;
   }
-  
-  .section-title {
-    font-size: 36px;
+  .Botox_bg{
+    background-position: 0 center !important;
   }
+  .section-about {
+    padding:0 2rem;
+  }
+  h5.about_txt_tit {
+    font-size: var(--font-size-lg);
+    line-height: 1.25rem;
+  }
+  .about_txt_desc{
+    line-height: 1rem;
+  }
+  .about_txt_doctor{ 
+    margin-top:0.8rem !important;
+  }
+
+
 }
 
 /* 데스크톱 대형 (1480px 이하) */
 @media screen and (max-width: 1480px) {
   .container {
     max-width: var(--container-var-1480);
-    margin: 0 auto;
-    padding: 0 40px;
   }
 }

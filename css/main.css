@@ -479,14 +479,14 @@
   margin-left: 200px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 720px) {
   .carousel-control-prev,
   .carousel-control-next {
     display: none !important;
   }
  
 }
-@media (max-width: 768px) {
+@media (max-width: 720px) {
   .offset-box {
     margin-left: 0;
   }
