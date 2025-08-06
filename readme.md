@@ -10,6 +10,7 @@
     <li>HTML5</li>
     <li>CSS3</li>
     <li>Bootstrap 5</li>
+    <li>Swiper 11</li>
     <li>Figma (UI/UX Design)</li>
 </ul>
 
@@ -30,6 +31,10 @@
             View Figma Design
         </a>
     </li>
+    <li> Git Page: <a href="https://minnngyu97.github.io/soraclinic-global/" target="_blank">
+            View Figma Design
+        </a>
+    </li>
 </ul>
 <h2>:bookmark: 커밋관리정보</h2>
 <ul>
@@ -37,21 +42,38 @@
     <li>[1.0] 메인페이지는 앞에 1로 시작</li>
     <li>[2.0] 상세페이지는 앞에 2로 시작</li>
     <li>[3.0] 기획&이벤트 페이지는 앞에 3으로 시작</li>
+    <li>[4.0] 이미지추가는 앞에 4으로 시작</li>
 </ul>
 
 <h2>:file_folder: Folder Structure (Simplified)</h2>
 <pre><code>
 soraclinic-global/
 ├── index.html
-├── css/
-│   └── font.css
-│   └── main.css
-│   └── global.css
-│   └── common.css
+├── event-page.html
+├── filler-botox-page.html
+├── readme.md
 ├── assets/
+│   ├── font/
 │   ├── images/
-│   └── fonts/
+│   │   ├── img-icon/
+│   │   ├── img-main/
+│   │   ├── img-sub/
+│   │   ├── ico.png
+│   │   ├── logo.png
+│   │   └── og_img02.png
+├── css/
+│   ├── common.css
+│   ├── event-page.css
+│   ├── filler-botox-page.css
+│   ├── font.css
+│   ├── global.css
+│   ├── layout.css
+│   ├── main.css
+│   ├── mingyu.css
+│   ├── reset.css
+│   └── sanna.css
 ├── js/
-    └── main.js
+│   ├── header.js
+│   └── swiper.js
 
 </code></pre>
