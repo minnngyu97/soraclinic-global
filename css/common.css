@@ -107,10 +107,6 @@ body {
   background :none !important
 }
 
-/*포지션*/
-.absolute {
-  position: absolute !important;
-}
 .left1 {
   left: 0.5rem;
 }
