@@ -1,0 +1,43 @@
+#sc-event-desc {
+  .card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .price-original {
+    font-size: var(--font-size-small);
+    font-weight: var(--fw-100);
+    color: var(--color-secondary);
+    text-decoration: line-through;
+  }
+
+  .event-title {
+    font-size: var(--sub-h4);
+    font-weight: var(--fw-600);
+    color: var(--basic-color);
+    max-width: 200px;
+  }
+
+  .event-price {
+    color: var(--color-primary);
+    font-size: var(--font-size-lg);
+    font-weight: var(--fw-600);
+    padding: 20px 10px;
+  }
+
+  .event-desc {
+    font-size: var(--font-size-base);
+    font-weight: var(--fw-400);
+    color: var(--color-desc);
+  }
+
+  .event-date {
+    font-size: var(--font-size-sm);
+    font-weight: var(--fw-500);
+    color: var(--color-muted);
+  }
+}
