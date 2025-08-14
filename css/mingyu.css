@@ -1,1 +1,114 @@
+#header .hd-menu-e .nav-item svg {
+  width: 24px;
+  height: 24px;
+}
+#header .hd-menu-e .nav-item svg path {
+  transition: stroke 0.3s;
+}
+#header .hd-menu-e .nav-item:hover svg path {
+  stroke: var(--color-primary);
+}
 
+#header .hd-menu-c .navbar-nav {
+	font-size: var(--navi-menu);
+}
+
+#header .hd-menu-c .dropdown-menu a {
+	color: var(--color-desc);
+}
+
+#header .hd-menu-e .dropdown-menu {
+	min-width: fit-content;
+}
+
+#header .hd-menu-e .dropdown-menu a:hover,
+#header .hd-menu-c .dropdown-menu a:hover {
+    color: var(--color-primary);
+}
+
+.container {
+  max-width: var(--container-var-1480);
+  margin: 0 auto;
+  padding: 20px 40px;
+}
+
+/* TJ - 반응형 미디어 쿼리 컨테이너 추가*/
+/* 태블릿 (720px 이하) */
+/* 데스크톱 대형 (1480px 이하) */
+@media screen and (max-width: 1480px) {
+  .container {
+    /* max-width: var(--container-var-1480); */
+    margin: 0 auto;
+    padding: 20px 40px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    padding: 20px 30px;
+  }
+
+  #header .hd-menu-c .navbar-nav {
+    font-size: var(--font-size-base) !important;
+    /* font-weight: var(--fw-400) !important; */
+  }
+
+  #header .hd-menu-c .nav-link {
+    padding: 12px !important;
+  }
+  
+}
+
+@media screen and (min-width: 992px) {
+  #header .hd-menu-c .dropdown:hover .dropdown-menu {
+    display: flex;
+    margin-top: 0;
+  }
+
+  #header .hd-menu-c .dropdown-menu {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  #header .hd-menu-e .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+
+  #header .hd-menu-e .dropdown-menu {
+    display: none;
+    position: absolute;
+    min-width: fit-content;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    white-space: nowrap;
+    z-index: 1000;
+  }
+}
+
+/* 데스크톱 중간 (960px 이하) */
+@media screen and (max-width: 960px) {
+  .container {
+    max-width: var(--container-var-960);
+    padding: 20px 30px;
+  }
+  
+}
+
+@media screen and (max-width: 720px) {
+  .container {
+    max-width: var(--container-var-720);
+    padding: 20px;
+  }
+  
+}
+
+@media screen and (max-width: 420px) {
+  .container {
+    max-width: var(--container-var-420);
+    padding: 20px;
+  }
+  
+}

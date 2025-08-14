@@ -182,9 +182,10 @@ footer {
 
 
 
+
 /* TJ - 반응형 미디어 쿼리 컨테이너 추가*/
 /* 태블릿 (720px 이하) */
-@media screen and (max-width: 720px) {
+/* @media screen and (max-width: 720px) {
   .container {
     max-width: var(--container-var-720);
     margin: 0 auto;
@@ -202,10 +203,10 @@ footer {
   .nav {
     font-size: 16px;
   }
-}
+} */
 
 /* 데스크톱 중간 (960px 이하) */
-@media screen and (max-width: 960px) {
+/* @media screen and (max-width: 960px) {
   .container {
     max-width: var(--container-var-960);
     margin: 0 auto;
@@ -219,13 +220,13 @@ footer {
   .section-title {
     font-size: 36px;
   }
-}
+} */
 
 /* 데스크톱 대형 (1480px 이하) */
-@media screen and (max-width: 1480px) {
+/* @media screen and (max-width: 1480px) {
   .container {
     max-width: var(--container-var-1480);
     margin: 0 auto;
     padding: 0 40px;
   }
-}
+} */

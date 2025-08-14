@@ -17,7 +17,7 @@
     --fw-400: 400; /*Regular*/
     --fw-500: 500; /*Medium*/
     --fw-600: 600; /*SemiBold*/
-    --fw-700: 700; /*Bold*/
+    --fw-700: 700 !important; /*Bold*/
     --fw-900: 900; /*Black*/
     
     /*color 값 셋팅*/
