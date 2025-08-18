@@ -71,7 +71,7 @@
         }
         .nav-list {
           display: flex;
-          color: $color-desc;
+          color: $colorDesc;
           @media (max-width: 992px) {
             flex-direction: column;
             align-items: start;
@@ -161,13 +161,13 @@
       z-index: 20;
       .bn-btn {
         padding: 10px 15px;
-        border: 1px solid $color-primary2;
+        border: 1px solid $primaryColor2;
         border-radius: 30px;
-        color: $color-desc;
+        color: $colorDesc;
         transition: 0.3s ease-in-out;
         &:hover {
           color:#fff;
-          background-color: $color-primary2;
+          background-color: $primaryColor2;
           transition: 0.3s ease-in-out;
         }
       }
@@ -177,8 +177,8 @@
         &:hover {
           svg path,
           .lang-txt {
-            stroke: $color-primary2;
-            color: $color-primary2; 
+            stroke: $primaryColor2;
+            color: $primaryColor2; 
             transition: stroke 0.3s, color 0.3s;
           }
         }
@@ -206,7 +206,7 @@
           visibility: hidden;
           text-align: center;
           background-color: #fff;
-          border: 1px solid $color-desc;
+          border: 1px solid $colorDesc;
           border-radius: 6px;
           .btn-item:nth-child(1) {
             a {
@@ -229,9 +229,9 @@
           font-size: 18px;
           font-weight: 400;
           transition: all 0.3s;
-          color: $color-desc;
+          color: $colorDesc;
           &:hover {
-            color: $color-primary2;
+            color: $primaryColor2;
           }
         }
       }
