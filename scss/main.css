@@ -402,11 +402,10 @@
 @media (max-width: 992px) {
   #hd .hd-group .hd-nav .nav-area .nav-item {
     flex-direction: column;
-    align-items: unset;
+    align-items: center;
     width: 100%;
     height: unset;
     padding: unset;
-    transition: 0.5s;
   }
   #hd .hd-group .hd-nav .nav-area .nav-item a {
     width: 100%;
@@ -420,6 +419,7 @@
 #hd .hd-group .hd-nav .nav-area .depth1-list {
   position: absolute;
   justify-content: center;
+  width: 100vw;
   top: 95px;
   left: 50%;
   transform: translateX(-50%);
@@ -444,10 +444,12 @@
   #hd .hd-group .hd-nav .nav-area .sub.show {
     position: unset;
     flex-direction: column;
+    width: calc(100% - 40px);
     margin: 0 20px;
     border: 1px solid #000;
     border-radius: 10px;
     transform: unset;
+    transition: 0.5s;
   }
 }
 #hd .hd-group .hd-nav.open {
@@ -530,6 +532,7 @@
   font-size: 18px;
   font-weight: 400;
   transition: all 0.3s;
+  color: #808080;
 }
 #hd .hd-group .hd-sub-nav .lang-btn-wrap .lang-link:hover {
   color: #1CBCCF;
