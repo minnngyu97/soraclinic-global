@@ -1,0 +1,288 @@
+@charset 'UTF-8';
+@import "./_global.scss";
+@import "./_variables.scss";
+@import "./_mixins.scss";
+@import "./_typography.scss";
+
+//card event
+#sc-event-desc {
+  .card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .price-original {
+    @include fs-px(14);
+    font-weight: $fw100;
+    color: $colorSecondary;
+    text-decoration: line-through;
+  }
+
+  .event-title {
+    @include fs-px(26);
+    font-weight: $fw600;
+    color: $basicColor;
+    max-width: 200px;
+  }
+
+  .event-price {
+    @include fs-px(20);
+    color: $primaryColor;
+    font-weight: $fw600;
+    padding: 20px 10px;
+  }
+
+  .event-desc {
+    @include fs-px(16);
+    font-weight: $fw400;
+    color: $colorDesc;
+  }
+
+  .event-date {
+    @include fs-px(14);
+    font-weight: $fw500;
+    color: $colorMuted;
+  }
+}
+
+//서비스안내
+#sc-our-value {
+  .services-bg {
+    background-color: $primaryColor2;
+  }
+
+  .services-con {
+    position: relative;
+    z-index: 1;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background: linear-gradient(to bottom, #2EC4B6, #fff);
+      z-index: -1;
+      opacity: 0.9;
+    }
+  }
+
+  .card-link:hover {
+    opacity: 0.7;
+    overflow: hidden;
+  }
+
+  .services-title {
+    font-size: fs(64);
+    font-weight: $fw500;
+    color: #fff;
+    letter-spacing: 0.8px;
+    line-height: 3.25rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .services-h4 {
+    @include fs-px(26);
+    font-weight: $fw400;
+    color:$basicColor;
+  }
+
+  .services-dese {
+    @include fs-px(16);
+    font-weight: $fw300;
+    color: $basicColor;
+  }
+
+  .services-banner > div {
+    min-height: calc(100vh - 500px);
+    padding: 2vh 0.5vw;
+  }
+
+  [class$="_bg"] {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  }
+  .Ulthera_bg { background-image: url(../assets/images/img-main/original_tr1.png); }
+  .Botox_bg   { background-image: url(../assets/images/img-main/original_tr2.png); }
+  .Inmode_bg  { background-image: url(../assets/images/img-main/original_tr3.png); }
+  .Thermage_bg{ background-image: url(../assets/images/img-main/original_tr4.png); }
+}
+
+//병원소개
+#sc-our-story {
+  .section-about {
+    background-color: $colorSubbg;
+    background-image: url(../assets/images/img-main/about_bg_circle.png);
+    background-repeat: no-repeat;
+    background-size: 600px;
+    background-position: right bottom;
+  }
+
+  #clinicCarousel {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .about_txt_box {
+    max-width: 600px;
+    z-index: 1;
+  }
+
+  .about_txt_tit {
+    @include fs-px(24);
+    color: $colorMuted;
+    font-weight: $fw500;
+    line-height: 2.3rem;
+  }
+
+  .about_txt_desc {
+    color: $colorSecondary;
+  }
+
+  .about_txt_doctor {
+    color: $colorMuted;
+    font-weight: $fw500;
+  }
+
+  .carousel-inner img {
+    border-radius: 20px;
+  }
+
+  @media (max-width: 720px) {
+    .carousel-control-prev,
+    .carousel-control-next {
+      display: none !important;
+    } // 추후 부스트랩 유틸클래스 활용 d-none d-md-block 
+  }
+
+  .quote {
+    position: relative;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 2em;
+      height: 2em;
+      background-color: currentColor;
+      color: $colorSub;
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 43 31'%3E%3Cpath d='M18.459 0V18.25H9.33399L15.4173 30.4167H6.29232L0.208984 18.25V0H18.459ZM42.7923 0V18.25H33.6673L39.7507 30.4167H30.6257L24.5423 18.25V0H42.7923Z' fill='%2390C6CD'/%3E%3C/svg%3E");
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 2em;
+      height: 2em;
+      background-color: currentColor;
+      color: $colorSub;
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 43 31'%3E%3Cg transform='scale(1,-1) translate(0,-31)'%3E%3Cpath d='M18.459 0V18.25H9.33399L15.4173 30.4167H6.29232L0.208984 18.25V0H18.459ZM42.7923 0V18.25H33.6673L39.7507 30.4167H30.6257L24.5423 18.25V0H42.7923Z' fill='%2390C6CD'/%3E%3C/g%3E%3C/svg%3E");
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      transform: rotate(180deg);
+    }
+  }
+}
+//의사소개
+#sc-doctors {
+  .doctors-title {
+    @include fs-px(26);
+    font-weight: $fw600;
+  }
+
+  .doctor-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .doctor-name {
+    @include fs-px(24);
+    font-weight:$fw600;
+  }
+
+  .doctor-position,
+  .doctor-intro {
+    @include fs-px(14);
+  }
+
+  .doctor-position {
+    color: $colorMuted;
+  }
+
+  .doctor-intro {
+    color: $colorText;
+  }
+
+  .doctors-sns i {
+    @include fs-px(18);
+    color: $colorSubbg;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $primaryColor;
+    }
+  }
+
+  .carousel-inner {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .carousel-indicators {
+    bottom: auto;
+
+    [data-bs-target] {
+      background-color: $primaryColor;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .active {
+      background-color: $colorPoint;
+    }
+  }
+}
+//contact_오시는길
+#sc-contact {
+  &.container {
+    color: $colorDesc;
+  }
+
+  .contact-group {
+    background-color: #E8F0F1;
+  }
+
+  .contact-box .time {
+    color: $primaryColor2;
+  }
+
+  h2 {
+    font-size: fs(44);
+    color: $primaryColor ;
+    letter-spacing: 0.44px;
+  }
+
+  .open-h {
+    @include fs-px(26);
+    color: $colorText;
+  }
+
+  .contact-addr-group a {
+    color: $colorDesc;
+  }
+}

@@ -1,33 +1,61 @@
-.blind {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  margin: -1px;
-}
+@charset 'UTF-8';
+@use "sass:math";
+// @import "./_mixins.scss";
+// @import "./_variables.scss";
 
-@for $i from 100 through 900 {
-    @if $i % 100 == 0 {
-        .fw#{$i} {
-            font-weight: $i !important;
-        }
-    }
-}
 
-@for $lh from 8 through 30 {
-  .line_h_#{$lh} {
-    line-height: ($lh / 10) !important;
-  }
-}
-
-@for $i from 12 through 56 {
-  .fs-#{$i} {
+// ==========================
+// Font-size (.fs-12 ~ .fs-26)
+@for $size from $min-fs through $max-fs {
+  .fs-#{$size} {
     font-size: clamp(
-      #{$i}px,
-      1vw + #{round($i / 10)}px,
-      #{round($i * 1.2)}px
+      #{$size}px, 
+      calc(#{$size}px + (#{$size} - $min-fs) * ((100vw - #{$min-vw}px) / (#{$max-vw - $min-vw}))), 
+      #{$size + 4}px
     ) !important;
   }
 }
 
+// Font-weight (.fw100 ~ .fw900)
+@each $weight in $font-weights {
+  .fw#{$weight} {
+    font-weight: $weight !important;
+  }
+}
+
+// Line-height (.lh_0_8 ~ .lh_3_0)
+@for $i from $lh-start through $lh-end {
+  $val: math.div($i, 10); // ← 슬래시 나눗셈 교체
+  $class: #{math.floor($val)}_#{($i % 10)}; // ← floor + 문자열 보간
+  .lh_#{$class} { line-height: $val !important; }
+}
+
+
+// ============ 기본 유틸리티 생성 (모바일 기본)
+@include sora-spacing(mt, margin-top);
+@include sora-spacing(mb, margin-bottom);
+@include sora-spacing(ml, margin-left);
+@include sora-spacing(mr, margin-right);
+
+@include sora-spacing(pt, padding-top);
+@include sora-spacing(pb, padding-bottom);
+@include sora-spacing(pl, padding-left);
+@include sora-spacing(pr, padding-right);
+
+@include sora-color();  // text-*, bg-*
+
+// ============ 반응형 유틸리티 생성
+@each $break, $width in $breakpoints {
+  @media (min-width: $width) {
+    @include sora-spacing(mt-#{$break}, margin-top);
+    @include sora-spacing(mb-#{$break}, margin-bottom);
+    @include sora-spacing(ml-#{$break}, margin-left);
+    @include sora-spacing(mr-#{$break}, margin-right);
+
+    @include sora-spacing(pt-#{$break}, padding-top);
+    @include sora-spacing(pb-#{$break}, padding-bottom);
+    @include sora-spacing(pl-#{$break}, padding-left);
+    @include sora-spacing(pr-#{$break}, padding-right);
+
+  }
+}

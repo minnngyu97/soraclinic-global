@@ -1,0 +1,28 @@
+#sc-contact {
+  &.container {
+    color: var(--color-desc);
+  }
+
+  .contact-group {
+    background-color: #E8F0F1;
+  }
+
+  .contact-box .time {
+    color: var(--color-primary2);
+  }
+
+  h2 {
+    font-size: var(--sub-h2);
+    color: var(--color-primary);
+    letter-spacing: 0.44px;
+  }
+
+  .open-h {
+    font-size: var(--sub-h4);
+    color: var(--color-text);
+  }
+
+  .contact-addr-group a {
+    color: var(--color-desc);
+  }
+}

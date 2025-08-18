@@ -1,0 +1,86 @@
+@charset 'UTF-8';
+
+@use "sass:map";
+
+// Colors
+$primaryColor:   #2EC4B6;
+$primaryColor2:  #1CBCCF;
+$basicColor:     #222;
+$colorDesc:      #808080;
+$colorSecondary: #999999;
+$colorText:      #4C5354;
+$colorMuted:     #777F81;
+$colorSubbg:     #cbf3f0;
+$colorAccent:    #FFCA28;
+$colorPoint:     #261906;
+$colorSub:       #9668fa;
+ 
+// Background
+$bgLight: #f8f9fa;
+$bgDark: #1a1a1a;
+
+// Border
+$border-light: #e0e0e0;
+$border-dark: #555;
+
+// Spacing Scale (0, 4, 8, 16, 32, 48, 64px)
+$spaces: (0, 0.25rem, 0.5rem, 1rem, 2rem, 3rem, 4rem);
+ 
+// Font Size Scale (12,14,16,18,20,24,26,28px)
+$font-sizes: (0.75rem, 0.875rem, 1rem, 1.125rem, 1.25rem, 1.5rem, 1.625rem, 1.75rem);
+
+// Font 고정 사이즈
+$fs-map: (
+  44: 2.75rem,
+  64: 4rem,
+);
+
+// 개별 변수 (컴포넌트에서 사용)
+$fw100: 100; $fw200: 200; $fw300: 300; $fw400: 400;
+$fw500: 500; $fw600: 600; $fw700: 700; $fw800: 800; $fw900: 900;
+
+// Font-weight 값들
+$font-weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
+
+// Line-height 범위
+$lh-start: 8;  // 0.8
+$lh-end: 30;   // 3.0
+
+$min-fs: 12;   // px
+$max-fs: 26;   // px
+$min-vw: 320;  // px
+$max-vw: 1920; // px
+
+// Breakpoints
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl : 1500px
+);
+
+// Semantic Maps(유틸 생성용)
+$colors: (
+  primary:    $primaryColor,
+  primary2:   $primaryColor2,
+  basic:      $basicColor,
+  desc:       $colorDesc,
+  secondary:  $colorSecondary, 
+  text:       $colorText,
+  muted:      $colorMuted,
+  subbg:      $colorSubbg,
+  accent:     $colorAccent,
+  point:      $colorPoint,
+  sub:        $colorSub,
+  light:      $bgLight,
+  dark:       $bgDark
+);
+
+//공통 클래스
+.active-color{
+  color:$primaryColor;
+}
+.sub-bg{
+  background-color:$colorSubbg;
+}
