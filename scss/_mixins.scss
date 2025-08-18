@@ -1,0 +1,109 @@
+@charset 'UTF-8';
+
+@use "sass:list";
+@use "sass:math";
+@use "sass:map";
+
+// Flexbox Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-col-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// Fixed Position Mixins
+@mixin fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+@mixin fixed-quick-bottom {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+}
+@mixin fixed-quick-center {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// 멀티라인
+@mixin line-clamp($lines) {
+  display: -webkit-box;
+  display: box; // optional
+  line-clamp: $lines; // 표준
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+//장애인 웹접근성용
+@mixin blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  margin: -1px;
+}
+
+// spacing
+@mixin sora-spacing($prefix, $property) {
+  @for $i from 1 through list.length($spaces) {
+    $space: list.nth($spaces, $i);
+    .#{$prefix}-#{$i - 1} { #{$property}: $space !important; }
+  }
+}
+
+// colors
+@mixin sora-color() {
+  @each $name, $value in $colors {
+    .text-#{$name} { color: $value !important; }
+    .bg-#{$name}   { background-color: $value !important; }
+  }
+}
+
+// px 숫자를 clamp로 변환하는 함수
+@function fluid-fs($px) {
+  // unitless 숫자도 px로 안전 변환
+  $min: if(math.is-unitless($px), $px * 1px, $px);
+  $minvw: if(math.is-unitless($min-vw), $min-vw * 1px, $min-vw);
+  $maxvw: if(math.is-unitless($max-vw), $max-vw * 1px, $max-vw);
+  $grow: (if(math.is-unitless($px), $px, $min / 1px) - $min-fs); // px 차이
+
+  @return clamp(
+    $min,
+    calc(#{$min} + #{$grow}px * ((100vw - #{$minvw}) / #{($maxvw - $minvw)})),
+    ($min + 4px) // 상한: +4px (원하면 바꿔도 됨)
+  );
+}
+
+// 컴포넌트에서 바로 쓰는 믹스인
+@mixin fs-px($px) {
+  font-size: fluid-fs($px) !important;
+}
+
+//font 고정상수 함수
+@function fs($px) { @return map.get($fs-map, $px); }

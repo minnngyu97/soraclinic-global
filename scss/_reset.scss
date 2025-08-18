@@ -1,0 +1,156 @@
+@charset 'UTF-8';
+// 기본 여백 제거
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+table,
+th,
+td,
+form,
+fieldset,
+legend,
+textarea,
+input,
+select,
+button,
+article,
+aside,
+dialog,
+footer,
+header,
+section,
+nav,
+figure,
+main {
+  margin: 0;
+  padding: 0;
+}
+
+// 박스 모델 & 폰트 스무딩
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// HTML5 요소 블록 처리
+article,
+aside,
+dialog,
+footer,
+header,
+section,
+nav,
+figure,
+main {
+  display: block;
+}
+
+// HTML & BODY 기본 설정
+html,
+body {
+  height: 100%;
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  -webkit-overflow-scrolling: auto;
+}
+
+// 이미지 & 폼 요소
+img,
+form,
+fieldset,
+svg,
+li {
+  border: 0;
+  vertical-align: top;
+}
+
+// 리스트 스타일 제거
+ul,
+ol {
+  list-style: none;
+}
+
+// 버튼 초기화
+button {
+  overflow: visible;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:disabled {
+    cursor: default;
+  }
+
+  &::-moz-focus-inner {
+    padding: 0;
+    margin: -1px;
+  }
+}
+
+// 입력 요소 초기화
+input,
+button,
+select {
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+// 폰트 스타일 초기화
+address,
+caption,
+em {
+  font-style: normal;
+}
+
+// 링크 초기화
+a {
+  display: inline-block;
+
+  &:focus,
+  &:active,
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// 테이블
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+// Bootstrap dropdown 활성화 스타일 제거
+.dropdown-menu {
+  .dropdown-item:active {
+    background-color: transparent !important;
+    color: inherit !important;
+    text-decoration: none;
+  }
+}
+
+//기본값 초기화 
+.position-unset {
+  position: unset !important;
+}
+.afterno:after{
+  display:none  !important;
+}
+.backgroundno{
+  background :none !important
+}

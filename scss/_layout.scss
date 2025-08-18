@@ -1,0 +1,48 @@
+@charset 'UTF-8';
+
+@import "./_variables.scss";
+@import "./_mixins.scss";
+@import "./_global.scss";
+@import "./_typography.scss";
+
+//header
+.nav {
+  font-size: $naviMenu;
+  font-weight: $fw300;
+  letter-spacing: 1.1px;
+}
+
+// Utility
+.text-muted {
+  color: $colorMuted;
+}
+
+.bg-primary {
+  background-color: $primaryColor !important;
+  color: #fff;
+}
+
+.bg-accent {
+  background-color: $colorAccent !important;
+  color: #000;
+}
+
+.border-light {
+  border: 1px solid $border-light;
+}
+
+.border-dark {
+  border: 1px solid $border-dark;
+}
+
+.left1 {
+  left: 0.5rem;
+}
+.top1 {
+  top: 0.5rem;
+}
+
+//푸터
+footer {
+  color:$basicColor;
+}
