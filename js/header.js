@@ -1,163 +1,143 @@
 document.addEventListener('DOMContentLoaded', function () {
-  let lastScroll = 0;
-  const header = document.querySelector('#hd');
-  const navBtn = document.querySelector('.hd-mo-nav-btn');
-  const navWrap = document.querySelector('.hd-nav-wrap');
+    // 1. 모든 DOM 요소를 상단에서 한 번만 선언
+    const header = document.querySelector('#hd');
+    const navBtn = document.querySelector('.hd-mo-nav-btn');
+    const navWrap = document.querySelector('.hd-nav'); // hd-nav로 변경 (CSS 선택자 일치)
+    const hdDim = document.querySelector('.hd-dim');
+    const gototopBtn = document.querySelector('.gototop');
 
-  // 모바일 메뉴 닫기
-  function closeMenu() {
-    navWrap.classList.remove('open');
-    document.body.classList.remove('menu-open');
-    document.querySelectorAll('.sub').forEach(sub => sub.classList.remove('show'));
-    header.classList.remove('fixed');
-    document.querySelectorAll('.hd-nav-wrap > .nav-link').forEach(link => link.classList.remove('active'));
-  }
+    let lastScroll = 0;
+    const isMobile = () => window.matchMedia('(max-width: 992px)').matches;
 
-  // 메뉴 이벤트 초기화
-  function initMenuEvents() {
-    const isMobile = window.matchMedia("(max-width: 992px)").matches;
-    const menuItems = document.querySelectorAll('.nav-list > li');
+    // 2. 모바일 메뉴 열고 닫는 로직을 하나의 함수로 통합
+    function toggleMobileMenu(isOpen) {
+        navWrap.classList.toggle('open', isOpen);
+        navBtn.classList.toggle('active', isOpen);
+        document.body.classList.toggle('menu-open', isOpen);
 
-    // 이벤트 중복 방지용 (기존 이벤트 제거 후 새로 붙임)
-    menuItems.forEach(item => item.replaceWith(item.cloneNode(true)));
-
-    if (isMobile) {
-      // 모바일: 클릭하면 드롭다운 토글
-      document.querySelectorAll('.nav-list > li').forEach(item => {
-        const subMenu = item.querySelector('.sub');
-        const topLink = item.querySelector('.nav-link');
-
-        if (subMenu) {
-          item.addEventListener('click', function (e) {
-            e.preventDefault();
-            subMenu.classList.toggle('show');
-
-            if (item.classList.contains('hd-nav-wrap') && topLink) {
-              topLink.classList.toggle('active');
-            }
-          });
-        }
-      });
-
-      // 모바일 메뉴 버튼
-      if (navBtn && navWrap) {
-        navBtn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          const isOpen = navWrap.classList.toggle('open');
-          document.body.classList.toggle('menu-open', isOpen);
-
-          if (isOpen) {
+        if (isOpen) {
             header.classList.add('fixed');
             header.classList.remove('hide');
-          } else {
+            // 메뉴가 열리면 딤드 배경에 pointer-events를 auto로 설정
+            if (hdDim) hdDim.style.pointerEvents = 'auto';
+        } else {
             header.classList.remove('fixed');
-            document.querySelectorAll('.hd-nav-wrap > .nav-link').forEach(link => link.classList.remove('active'));
-          }
-
-          if (!isOpen) {
-            document.querySelectorAll('.sub').forEach(sub => sub.classList.remove('show'));
-          }
-        });
-      }
-    } else {
-      // 데스크탑: 호버 시 드롭다운
-      document.querySelectorAll('.nav-list > li').forEach(item => {
-        const subMenu = item.querySelector('.sub');
-        const topLink = item.querySelector('.nav-link');
-
-        if (subMenu) {
-          item.addEventListener('mouseenter', () => {
-            subMenu.classList.add('show');
-            if (item.classList.contains('hd-nav-wrap') && topLink) {
-              topLink.classList.add('active');
-            }
-          });
-          item.addEventListener('mouseleave', () => {
-            subMenu.classList.remove('show');
-            if (item.classList.contains('hd-nav-wrap') && topLink) {
-              topLink.classList.remove('active');
-            }
-          });
+            // 메뉴가 닫히면 모든 서브메뉴 닫기
+            document.querySelectorAll('.sub.show').forEach(sub => sub.classList.remove('show'));
+            document.querySelectorAll('.hd-nav-wrap > .nav-link.active').forEach(link => link.classList.remove('active'));
+            // 메뉴가 닫히면 딤드 배경에 pointer-events를 none으로 설정
+            if (hdDim) hdDim.style.pointerEvents = 'none';
         }
-      });
-    }
-  }
-
-  // 외부 클릭 시 메뉴 닫기
-  document.addEventListener('click', (e) => {
-    if (navWrap.classList.contains('open')) {
-      if (
-        navWrap.contains(e.target) ||
-        navBtn.contains(e.target) ||
-        header.contains(e.target) ||
-        e.target.closest('.nav-list > li > a') // 메뉴 링크 클릭 제외
-      ) return;
-      closeMenu();
-    }
-  });
-
-  // 스크롤 시 header hide/show
-  window.addEventListener('scroll', function () {
-    if (header.classList.contains('fixed')) return; // 메뉴 열리면 스크롤 무시
-
-    const curr = window.scrollY;
-
-    if (curr > lastScroll) {
-      header.classList.add('hide');
-    } else {
-      header.classList.remove('hide');
     }
 
-    lastScroll = curr;
-  });
+    // 3. 데스크톱과 모바일 메뉴 이벤트를 한 함수에서 관리
+    function initMenuEvents() {
+        // 기존 이벤트 리스너 제거 (이벤트 재할당 방식 변경)
+        navWrap.removeEventListener('click', handleMobileMenuClick);
+        navWrap.removeEventListener('mouseenter', handleDesktopMenuHover);
+        navWrap.removeEventListener('mouseleave', handleDesktopMenuHover);
 
-  window.addEventListener('scroll', function () {
-    const moSubMenu = document.querySelector('.hd-nav .sub'); // mo-sub-menu 선택
-
-    if (window.scrollY > 50) {
-      header.classList.add('active');
-      document.querySelector('.gototop').classList.add('active');
-      if (moSubMenu) moSubMenu.classList.add('active'); // active 추가
-    } else {
-      header.classList.remove('active');
-      document.querySelector('.gototop').classList.remove('active');
-      if (moSubMenu) moSubMenu.classList.remove('active'); // active 제거
+        if (isMobile()) {
+            navWrap.addEventListener('click', handleMobileMenuClick);
+        } else {
+            navWrap.addEventListener('mouseenter', handleDesktopMenuHover);
+            navWrap.addEventListener('mouseleave', handleDesktopMenuHover);
+        }
     }
-  });
 
-  // 언어 선택 버튼
-  document.querySelectorAll('.lang-btn-wrap').forEach(btnWrap => {
-    btnWrap.addEventListener('click', function (e) {
-      e.preventDefault();
-      document.querySelector('.hd-group .lang-btn-wrap').classList.toggle('active');
+    // 모바일 메뉴 클릭 이벤트 핸들러
+    function handleMobileMenuClick(e) {
+        const topLink = e.target.closest('.nav-list > li > a');
+        if (!topLink) return;
+
+        const subMenu = topLink.nextElementSibling;
+        if (subMenu && subMenu.classList.contains('sub')) {
+            e.preventDefault();
+            subMenu.classList.toggle('show');
+            topLink.classList.toggle('active');
+        }
+    }
+
+    // 데스크톱 메뉴 호버 이벤트 핸들러
+    function handleDesktopMenuHover(e) {
+        const item = e.target.closest('.nav-list > li');
+        if (!item) return;
+
+        const subMenu = item.querySelector('.sub');
+        if (subMenu) {
+            if (e.type === 'mouseenter') {
+                subMenu.classList.add('show');
+            } else {
+                subMenu.classList.remove('show');
+            }
+        }
+    }
+
+    // 4. 스크롤 이벤트를 하나로 통합
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.scrollY;
+
+        // 헤더 숨기기/보이기 로직
+        // fixed 클래스가 없어야만 작동
+        if (!header.classList.contains('fixed')) {
+            if (currentScroll > lastScroll) {
+                header.classList.add('hide');
+            } else {
+                header.classList.remove('hide');
+            }
+        }
+        lastScroll = currentScroll;
+
+        // 헤더 배경 및 gototop 버튼 표시 로직
+        if (currentScroll > 50) {
+            header.classList.add('scrolled', 'active');
+            if (gototopBtn) gototopBtn.classList.add('active');
+        } else {
+            header.classList.remove('scrolled', 'active');
+            if (gototopBtn) gototopBtn.classList.remove('active');
+        }
     });
-  });
 
-  // 트리거 버튼
-  document.querySelectorAll('.trigger').forEach(trigger => {
-    trigger.addEventListener('click', function () {
-      this.classList.toggle('active');
-      document.querySelector('.hd-nav').classList.toggle('open');
+    // 5. 모든 이벤트 리스너를 한 곳에 모아 관리
+    // 모바일 메뉴 버튼 클릭
+    if (navBtn) {
+        navBtn.addEventListener('click', () => {
+            const isOpen = !navWrap.classList.contains('open');
+            toggleMobileMenu(isOpen);
+        });
+    }
+
+    // 딤드 배경 클릭 시 메뉴 닫기
+    if (hdDim) {
+        hdDim.addEventListener('click', () => {
+            toggleMobileMenu(false);
+        });
+    }
+
+    // 외부 클릭 시 메뉴 닫기
+    document.addEventListener('click', (e) => {
+        // 메뉴 버튼, 메뉴, 헤더 클릭 시 닫히지 않도록
+        const isClickInside = navBtn.contains(e.target) || navWrap.contains(e.target);
+        if (!isClickInside && navWrap.classList.contains('open')) {
+            toggleMobileMenu(false);
+        }
     });
-  });
 
-  // 섹션 클릭 시 메뉴 닫기 (헤더 고정 X)
-  document.querySelectorAll('section, .menu a').forEach(element => {
-    element.addEventListener('click', function () {
-      document.querySelector('.hd-nav').classList.remove('open');
-      document.querySelectorAll('.trigger').forEach(trigger => {
-        trigger.classList.remove('active');
-      });
-      // header.fixed 제거 → 스크롤에 반응 유지
+    // 언어 선택 버튼 토글
+    document.querySelectorAll('.lang-btn-wrap').forEach(btnWrap => {
+        btnWrap.addEventListener('click', (e) => {
+            e.stopPropagation(); // 외부 클릭 닫힘 방지
+            btnWrap.classList.toggle('active');
+        });
     });
-  });
 
-  // 초기 실행
-  initMenuEvents();
-  window.addEventListener('resize', initMenuEvents);
+    // 퀵메뉴 호버
+    document.querySelectorAll('.quick-item').forEach(item => {
+        item.addEventListener('mouseenter', () => item.classList.add('active'));
+        item.addEventListener('mouseleave', () => item.classList.remove('active'));
+    });
+
+    // 초기화 함수 실행
+    initMenuEvents();
+    window.addEventListener('resize', initMenuEvents);
 });
-
-
-//퀵메뉴
-
-

@@ -11920,20 +11920,29 @@ body {
   color: #808080;
 }
 
+/* 메인에서만 투명 시작 */
+body.main #hd {
+  background-color: transparent;
+}
+
+/* 메인에서 스크롤 시 흰 배경 */
+body.main #hd.scrolled {
+  background-color: #fff;
+}
+
 #hd {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
   width: 100%;
-  background-color: transparent;
+  background-color: #fff;
   -webkit-transition: height 0.2s linear 0.1s, -webkit-transform 0.2s linear;
   transition: height 0.2s linear 0.1s, -webkit-transform 0.2s linear;
   transition: transform 0.2s linear, height 0.2s linear 0.1s;
   transition: transform 0.2s linear, height 0.2s linear 0.1s, -webkit-transform 0.2s linear;
 }
 #hd.active {
-  background-color: #fff;
   transition: transform 0.3s ease;
 }
 #hd.hide {
