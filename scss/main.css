@@ -11945,6 +11945,18 @@ body {
   top: 0;
   transform: translateY(0) !important;
 }
+#hd .hd-dim {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  width: 100%;
+  height: 100lvh;
+  background-color: transparent;
+  -webkit-transition: background-color 0.2s ease-in-out, backdrop-filter 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, backdrop-filter 0.2s ease-in-out;
+  pointer-events: none;
+}
 #hd .hd-group {
   position: relative;
   max-width: 1440px;
@@ -11957,7 +11969,7 @@ body {
   top: 50%;
   transform: translateY(-50%);
   left: 20px;
-  z-index: 20;
+  z-index: 7;
 }
 #hd .hd-group .hd-nav {
   display: flex;
@@ -12080,11 +12092,13 @@ body {
   -webkit-transform: translateX(0);
   transform: translateX(0);
   -webkit-transition: visibility 0ms linear 0ms, -webkit-transform 0.3s;
-  transition: visibility 0ms linear 0ms, -webkit-transform 0.3s;
-  transition: transform 0.3s, visibility 0ms linear 0ms;
   transition: transform 0.3s, visibility 0ms linear 0ms, -webkit-transform 0.3s;
   visibility: visible;
   pointer-events: auto;
+}
+#hd .hd-group .hd-nav.open + .hd-dim {
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 #hd .hd-group .hd-sub-nav {
   display: flex;
@@ -12215,4 +12229,85 @@ body {
 body.menu-open {
   overflow: hidden;
   height: 100vh;
+}
+
+.quick-group {
+  position: fixed;
+  left: 10px;
+  bottom: 10px;
+  z-index: 7;
+}
+.quick-group .quick-area .quick-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.quick-group .quick-area .quick-menu li {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+.quick-group .quick-area .quick-menu li a.quick-item {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1CBCCF;
+  border-radius: 10px;
+  color: #fff;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: width 0.3s ease;
+}
+.quick-group .quick-area .quick-menu li a.quick-item .icon {
+  width: 24px;
+  height: 24px;
+  margin: 0 13px;
+  flex-shrink: 0;
+}
+.quick-group .quick-area .quick-menu li a.quick-item .text {
+  opacity: 0;
+  transform: translateX(10px);
+  font-size: 14px;
+  padding-right: 12px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.quick-group .quick-area .quick-menu li a.quick-item:hover {
+  width: 160px;
+}
+.quick-group .quick-area .quick-menu li a.quick-item:hover .text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+#sc-contact .contact-group {
+  padding: clamp(20px, 20px + 20 * (100vw - 320px) / 1600, 40px);
+}
+#sc-contact .contact-group .contact-area {
+  flex: 1;
+}
+#sc-contact .contact-group .google-map-area {
+  flex: 1;
+}
+#sc-contact .contact-group .google-map-area iframe {
+  height: clamp(250px, 250px + 150 * (100vw - 320px) / 1600, 400px);
+}
+
+@media (max-width: 768px) {
+  #ft .ft-group .ft-info-group .info-group-left {
+    text-align: center;
+  }
+}
+#ft .ft-group .ft-info-group .info-group-right {
+  text-align: end;
+}
+@media (max-width: 768px) {
+  #ft .ft-group .ft-info-group .info-group-right {
+    text-align: center;
+  }
 }

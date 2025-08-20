@@ -518,17 +518,14 @@ a.quick-link > .icon {
 } */
 
 .gototop {
-  position: fixed;
+  /* position: fixed;
   right: 20px;
   bottom: 20px;
-  display: block;
-  /* border-radius: 50%;
-  text-align: center;
-  line-height: 50px; */
+  display: block; */
   transform: translateY(30px);
   opacity: 0;
   transition: 0.5s;
-  z-index: 9999;
+  /* z-index: 9999; */
 }
 .gototop.active {
   opacity: 1;
