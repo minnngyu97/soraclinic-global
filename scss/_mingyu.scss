@@ -1,13 +1,24 @@
-/* 메인에서만 투명 시작 */
+/* 메인에서만 기본은 투명 */
 body.main #hd {
   background-color: transparent;
+  transition: background-color 0.3s ease;
 }
 
-/* 메인에서 스크롤 시 흰 배경 */
+/* 스크롤 상태 → 흰색 */
 body.main #hd.scrolled {
   background-color: #fff;
 }
 
+/* 서브메뉴 기본 흰색 */
+.nav-list > li > .sub {
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+/* 메인 최상단 + header가 투명일 때 → 서브메뉴도 투명 */
+body.main #hd:not(.scrolled) .nav-list > li > .sub {
+  background-color: transparent;
+}
 
 #hd {
   position: fixed;
@@ -50,9 +61,6 @@ body.main #hd.scrolled {
   }
 
   .hd-group {
-    // display: flex;
-    // justify-content: space-between;
-    // align-items: center;
     position: relative;
     max-width: 1440px;
     margin: 0 auto;
@@ -294,10 +302,7 @@ body.main #hd.scrolled {
       .trigger {
         display: block;
         width: 24px;
-        height: 14px;
-        // position: absolute;
-        // right: 20px;
-        // top: 20px;
+        height: 18px;
       }
       .trigger span {
         position: absolute;
@@ -356,6 +361,7 @@ body.menu-open {
   left: 10px;
   bottom: 10px;
   z-index: 7;
+  pointer-events: none;
 
   .quick-area {
     .quick-menu {
@@ -365,15 +371,15 @@ body.menu-open {
 
       li {
         position: relative;
-        width: 50px;   // li 크기는 고정
+        width: 50px;
         height: 50px;
 
         a.quick-item {
-          position: absolute;  // li 안에서 절대 배치
+          position: absolute;
           left: 0;
           top: 0;
           bottom: 0;
-          width: 50px;         // 기본 너비
+          width: 50px;
           height: 100%;
           display: flex;
           align-items: center;
@@ -401,17 +407,23 @@ body.menu-open {
           }
 
           &:hover {
-            width: 160px;  // 확장 (우측 기준으로만 좌측으로 늘어남)
+            width: 160px;
 
             .text {
               opacity: 1;
               transform: translateX(0);
             }
           }
+
+          
         }
       }
     }
   }
+}
+
+.quick-group.active {
+  pointer-events: auto;
 }
 
 

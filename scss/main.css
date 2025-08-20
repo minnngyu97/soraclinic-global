@@ -8711,6 +8711,7 @@ body {
 }
 
 .hero-badge-text {
+  width: -moz-fit-content;
   width: fit-content;
   font-size: var(--font-size-base);
   animation: glow 2s infinite alternate;
@@ -8782,7 +8783,8 @@ body {
 
 .hero-image {
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   aspect-ratio: 4/3;
   transition: transform 0.7s;
 }
@@ -8804,7 +8806,8 @@ body {
 .hero-product-img {
   width: 6rem;
   height: 6rem;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 0.75rem;
   border: 1px solid hsla(174, 95%, 45%, 0.2);
 }
@@ -11827,9 +11830,12 @@ body {
   height: 2em;
   background-color: currentColor;
   color: #9668fa;
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 43 31'%3E%3Cpath d='M18.459 0V18.25H9.33399L15.4173 30.4167H6.29232L0.208984 18.25V0H18.459ZM42.7923 0V18.25H33.6673L39.7507 30.4167H30.6257L24.5423 18.25V0H42.7923Z' fill='%2390C6CD'/%3E%3C/svg%3E");
-  mask-size: contain;
-  mask-repeat: no-repeat;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 43 31'%3E%3Cpath d='M18.459 0V18.25H9.33399L15.4173 30.4167H6.29232L0.208984 18.25V0H18.459ZM42.7923 0V18.25H33.6673L39.7507 30.4167H30.6257L24.5423 18.25V0H42.7923Z' fill='%2390C6CD'/%3E%3C/svg%3E");
+          mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 43 31'%3E%3Cpath d='M18.459 0V18.25H9.33399L15.4173 30.4167H6.29232L0.208984 18.25V0H18.459ZM42.7923 0V18.25H33.6673L39.7507 30.4167H30.6257L24.5423 18.25V0H42.7923Z' fill='%2390C6CD'/%3E%3C/svg%3E");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
   position: absolute;
   top: 0;
   left: 0;
@@ -11841,9 +11847,12 @@ body {
   height: 2em;
   background-color: currentColor;
   color: #9668fa;
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 43 31'%3E%3Cg transform='scale(1,-1) translate(0,-31)'%3E%3Cpath d='M18.459 0V18.25H9.33399L15.4173 30.4167H6.29232L0.208984 18.25V0H18.459ZM42.7923 0V18.25H33.6673L39.7507 30.4167H30.6257L24.5423 18.25V0H42.7923Z' fill='%2390C6CD'/%3E%3C/g%3E%3C/svg%3E");
-  mask-size: contain;
-  mask-repeat: no-repeat;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 43 31'%3E%3Cg transform='scale(1,-1) translate(0,-31)'%3E%3Cpath d='M18.459 0V18.25H9.33399L15.4173 30.4167H6.29232L0.208984 18.25V0H18.459ZM42.7923 0V18.25H33.6673L39.7507 30.4167H30.6257L24.5423 18.25V0H42.7923Z' fill='%2390C6CD'/%3E%3C/g%3E%3C/svg%3E");
+          mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 43 31'%3E%3Cg transform='scale(1,-1) translate(0,-31)'%3E%3Cpath d='M18.459 0V18.25H9.33399L15.4173 30.4167H6.29232L0.208984 18.25V0H18.459ZM42.7923 0V18.25H33.6673L39.7507 30.4167H30.6257L24.5423 18.25V0H42.7923Z' fill='%2390C6CD'/%3E%3C/g%3E%3C/svg%3E");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -11857,7 +11866,8 @@ body {
 #sc-doctors .doctor-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 #sc-doctors .doctor-name {
   font-size: clamp(24px, 24px + 12px * (100vw - 320px) / 1600px, 28px) !important;
@@ -11920,14 +11930,26 @@ body {
   color: #808080;
 }
 
-/* 메인에서만 투명 시작 */
+/* 메인에서만 기본은 투명 */
 body.main #hd {
   background-color: transparent;
+  transition: background-color 0.3s ease;
 }
 
-/* 메인에서 스크롤 시 흰 배경 */
+/* 스크롤 상태 → 흰색 */
 body.main #hd.scrolled {
   background-color: #fff;
+}
+
+/* 서브메뉴 기본 흰색 */
+.nav-list > li > .sub {
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+/* 메인 최상단 + header가 투명일 때 → 서브메뉴도 투명 */
+body.main #hd:not(.scrolled) .nav-list > li > .sub {
+  background-color: transparent;
 }
 
 #hd {
@@ -11937,10 +11959,7 @@ body.main #hd.scrolled {
   z-index: 100;
   width: 100%;
   background-color: #fff;
-  -webkit-transition: height 0.2s linear 0.1s, -webkit-transform 0.2s linear;
-  transition: height 0.2s linear 0.1s, -webkit-transform 0.2s linear;
   transition: transform 0.2s linear, height 0.2s linear 0.1s;
-  transition: transform 0.2s linear, height 0.2s linear 0.1s, -webkit-transform 0.2s linear;
 }
 #hd.active {
   transition: transform 0.3s ease;
@@ -11962,8 +11981,9 @@ body.main #hd.scrolled {
   width: 100%;
   height: 100lvh;
   background-color: transparent;
-  -webkit-transition: background-color 0.2s ease-in-out, backdrop-filter 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, -webkit-backdrop-filter 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out, backdrop-filter 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, backdrop-filter 0.2s ease-in-out, -webkit-backdrop-filter 0.2s ease-in-out;
   pointer-events: none;
 }
 #hd .hd-group {
@@ -11998,12 +12018,8 @@ body.main #hd.scrolled {
     border-top: 95px solid transparent;
     background-color: #fff;
     visibility: hidden;
-    -webkit-transform: translateX(100%);
     transform: translateX(100%);
-    -webkit-transition: visibility 0ms linear 0.3s, -webkit-transform 0.3s;
-    transition: visibility 0ms linear 0.3s, -webkit-transform 0.3s;
     transition: transform 0.3s, visibility 0ms linear 0.3s;
-    transition: transform 0.3s, visibility 0ms linear 0.3s, -webkit-transform 0.3s;
     pointer-events: none;
   }
 }
@@ -12098,15 +12114,14 @@ body.main #hd.scrolled {
   background-color: #fff;
 }
 #hd .hd-group .hd-nav.open {
-  -webkit-transform: translateX(0);
   transform: translateX(0);
-  -webkit-transition: visibility 0ms linear 0ms, -webkit-transform 0.3s;
-  transition: transform 0.3s, visibility 0ms linear 0ms, -webkit-transform 0.3s;
+  transition: transform 0.3s, visibility 0ms linear 0ms;
   visibility: visible;
   pointer-events: auto;
 }
 #hd .hd-group .hd-nav.open + .hd-dim {
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   background-color: rgba(0, 0, 0, 0.5);
 }
 #hd .hd-group .hd-sub-nav {
@@ -12191,7 +12206,7 @@ body.main #hd.scrolled {
 #hd .hd-group .hd-mo-nav-btn .trigger {
   display: block;
   width: 24px;
-  height: 14px;
+  height: 18px;
 }
 #hd .hd-group .hd-mo-nav-btn .trigger span {
   position: absolute;
@@ -12245,6 +12260,7 @@ body.menu-open {
   left: 10px;
   bottom: 10px;
   z-index: 7;
+  pointer-events: none;
 }
 .quick-group .quick-area .quick-menu {
   display: flex;
@@ -12292,6 +12308,10 @@ body.menu-open {
 .quick-group .quick-area .quick-menu li a.quick-item:hover .text {
   opacity: 1;
   transform: translateX(0);
+}
+
+.quick-group.active {
+  pointer-events: auto;
 }
 
 #sc-contact .contact-group {
