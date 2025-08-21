@@ -135,14 +135,23 @@ document.addEventListener('DOMContentLoaded', function () {
     // PC(마우스 있는 환경)에서만 실행
     if (window.matchMedia('(hover: hover)').matches) {
     document.querySelectorAll('.quick-item').forEach(item => {
-        item.addEventListener('mouseenter', () => {
-        item.classList.add('active');
+            item.addEventListener('mouseenter', () => {
+                item.classList.add('active');
+            });
+            item.addEventListener('mouseleave', () => {
+                item.classList.remove('active');
+            });
         });
-        item.addEventListener('mouseleave', () => {
-        item.classList.remove('active');
+    }
+
+    document.querySelectorAll('.trigger').forEach(trigger => {
+        trigger.addEventListener('click', function () {
+            this.classList.toggle('active');
+            document.querySelectorAll('.gnb').forEach(gnb => {
+                gnb.classList.toggle('active');
+            });
         });
     });
-    }
 
     // 13. 초기화 실행
     initMenuEvents();

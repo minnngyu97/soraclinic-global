@@ -26,7 +26,7 @@ body.main #hd:not(.scrolled) .nav-list > li > .sub {
   left: 0;
   z-index: 100;
   width: 100%;
-  border-bottom: 1px solid $colorSecondary;
+  // border-bottom: 1px solid $colorSecondary;
   background-color: #fff;
   -webkit-transition: height 0.2s linear 0.1s, -webkit-transform 0.2s linear;
   transition: height 0.2s linear 0.1s, -webkit-transform 0.2s linear;
@@ -74,9 +74,9 @@ body.main #hd:not(.scrolled) .nav-list > li > .sub {
       transform: translateY(-50%);
       left: 20px;
       z-index: 7;
-      .svg {
+      svg {
         @media (max-width: 768px) {
-          width: 140px;
+          width: 130px;
         }
       }
     }
@@ -112,7 +112,7 @@ body.main #hd:not(.scrolled) .nav-list > li > .sub {
         }
         .nav-list {
           display: flex;
-          color: $colorDesc;
+          color: $basicColor;
           @media (max-width: 991px) {
             flex-direction: column;
             align-items: start;
@@ -164,16 +164,26 @@ body.main #hd:not(.scrolled) .nav-list > li > .sub {
           width: 100vw;
           top: 95px;
           left: 50%;
-          border-top: 1px solid $colorSecondary;
-          border-bottom: 1px solid $colorSecondary;
           transform: translateX(-50%);
           transition: 0.5s;
         }
   
         .depth1-item {
+          position: relative;
           padding: 15px;
           @media (max-width: 991px) {
             padding: unset;            
+            &:before {
+              content: '';
+              position: absolute;
+              width: 5px;
+              height: 5px;
+              top: 50%;
+              left: 0;
+              border-radius: 50%;
+              background-color: $colorDesc;
+              transform: translateY(-50%);
+            }
           }
         }
   
@@ -228,7 +238,7 @@ body.main #hd:not(.scrolled) .nav-list > li > .sub {
         padding: 10px 15px;
         border: 1px solid $primaryColor2;
         border-radius: 30px;
-        color: $colorDesc;
+        color: $basicColor;
         transition: 0.3s ease-in-out;
         &:hover {
           color:#fff;
@@ -258,9 +268,9 @@ body.main #hd:not(.scrolled) .nav-list > li > .sub {
 
         .lang-txt {
           display: inline-block;
-          margin: 0 5px;
           font-size: 18px;
           font-weight: 400;
+          color: $basicColor;
         }
 
         .btn-list {
@@ -350,9 +360,10 @@ body.main #hd:not(.scrolled) .nav-list > li > .sub {
 
   .mo-sub-menu {
     height: 60px;
-    border-top: 1px solid $colorSecondary;
+    // border-top: 1px solid $colorSecondary;
     .nav-link {
-      padding: 20px;
+      padding: 15px 20px;
+      font-weight: 700;
     }
   }
 }
