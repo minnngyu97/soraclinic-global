@@ -1,3 +1,10 @@
+@charset 'UTF-8';
+@import "./_global.scss";
+@import "./_variables.scss";
+@import "./_mixins.scss";
+@import "./_typography.scss";
+
+
 #main {
   // margin-top: 95px;
 
@@ -95,8 +102,8 @@
 }
 
 .hero-badge-text {
+  @include fs-px(16);
   width: fit-content;
-  font-size: var(--font-size-base);
   animation: glow 2s infinite alternate;
   color: #9AB4B7;
 }
@@ -104,7 +111,7 @@
 .hero-title {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 2rem;
+  font-size: $eventTit2;
   background: linear-gradient(
     90deg,
     hsl(174, 95%, 45%),
@@ -114,30 +121,29 @@
   background-clip: text;
   color: transparent;
 
-  @media (min-width: 768px) {
-    font-size: 3rem;
-  }
   @media (min-width: 1024px) {
-    font-size: var(--event-tit);
+     font-size: $subH2;
+     font-weight: $fw700;
   }
 
   &-secondary {
     -webkit-text-fill-color: initial;
     background: none;
-    color: hsl(222.2, 84%, 4.9%);
+    color: #03060f;
+    font-weight: $fw500;
   }
 }
 
 .hero-desc {
-  font-size: var(--font-size-base);
-  color: hsl(215.4, 16.3%, 46.9%);
+  @include fs-px(16);
+  color: #5b6c80;
   max-width: 32rem;
   line-height: 1.7;
 }
 
 .hero-highlight {
-  font-weight: var(--fw-600);
-  color: hsl(174, 95%, 45%);
+  font-weight: $fw600;
+  color: $primaryColor;
 }
 
 .hero-btn-wrap {
@@ -147,7 +153,7 @@
 }
 
 .hero-btn {
-  font-size: var(--event-desc);
+ @include fs-px(16);
   border: none;
   background: hsl(174, 95%, 45%);
   box-shadow: 0 10px 40px -10px hsl(174, 95%, 45%, 0.3);

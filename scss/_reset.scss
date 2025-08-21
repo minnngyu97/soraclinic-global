@@ -121,11 +121,16 @@ em {
 // 링크 초기화
 a {
   display: inline-block;
+  text-decoration: none;
+  color: inherit;
 
-  &:focus,
-  &:active,
   &:hover {
     text-decoration: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $colorSubbg; // 키보드 탐색 시만 표시
+    outline-offset: 2px;
   }
 }
 

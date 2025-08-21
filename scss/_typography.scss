@@ -9,13 +9,15 @@
 $fontBase: 'Pretendard','Noto Sans JP','Noto Sans SC', Arial, sans-serif;
 $naviMenu: 1.125rem; /*18px*/
 $eventTit: 4rem; /*64px*/
+$eventTit2:2rem; /*32px*/ 
 $subH2: 2.75rem; /*44px*/
+
 
 // 기본 텍스트 스타일
 body {
   font-family: $fontBase;
   line-height: 1.1;
-  color: #222;
+  color: $basicColor;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -23,55 +25,44 @@ body {
   padding: 0;
 }
 
-// 헤딩 스타일
-// h1, h2, h3, h4, h5, h6 {
-//   line-height: 1.2;
-//   margin: 0 0 .5em;
-// }
-
-/* === Title Elements === */
-.tit {
-  font-size: 2rem;
-  font-weight: var(--fw-600);
-  color: var(--color-primary);
-  margin-bottom: 1rem;
+// 헤딩 스케일 (필요에 맞춰 조절)
+h1, .h1 {
+  @include fs-px(36, 44);   
+  @include lh-px(12, 16); // 1.2 ~ 1.6
+  font-weight: $fw600;
 }
-
-.subtit {
-  font-size: var(--subtitle);
-  font-weight: var(--fw-500);
-  color: var(--color-secondary);
-  margin-bottom: 0.75rem;
+h2, .h2 {
+  @include fs-px(30, 36); 
+  @include lh-px(12, 16);
+  font-weight: $fw600;
 }
-
-.desc {
-  font-size: var(--font-size-base);
-  line-height: 1.6;
-  color: var(--color-text);
-  margin-bottom: 1rem;
+h3, .h3 {
+  @include fs-px(24, 30);  
+  @include lh-px(12, 16);
+  font-weight: $fw600;
 }
-
-.highlight {
-  color: var(--color-accent);
-  font-weight: var(--fw-700);
+h4, .h4 {
+  @include fs-px(20, 24);  
+  @include lh-px(12, 16);
+  font-weight: $fw500;
 }
-
-.content-title {
-  font-size: var(--event-tit);
-  font-weight: var(--fw-600);
-  letter-spacing: 0.5px;
-  margin-bottom: 8px;
+h5, .h5 {
+  @include fs-px(18, 22); 
+  @include lh-px(12, 16);
+  font-weight: $fw500;
 }
-
-.section-title {
-  font-size: var(--sub-h4);
-  font-weight: var(--fw-500);
-  color: #fff;
+p, .text-body {
+  @include fs-px(16, 18);
+  @include lh-px(14, 20);
+  color: $colorText;
 }
-
-.sub_w_title{
-  font-size: var(--font-size-sm);
+.small {
+  @include fs-px(12, 14); 
+  @include lh-px(12, 18); // 1.2 ~ 1.8
+  color: $colorMuted;
 }
+.caption { @include fs-px(12); }
+
 
 // 텍스트 유틸 (필요시만)
 // .text-center { text-align: center !important; }

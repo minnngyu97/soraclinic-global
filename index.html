@@ -28,11 +28,11 @@
     <!-- 플러그인 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <!-- 커스터마이징 -->
-    <link rel="stylesheet" href="./css/reset.css"/>
+    <!-- <link rel="stylesheet" href="./css/reset.css"/>
     <link rel="stylesheet" href="./css/common.css"/>
     <link rel="stylesheet" href="./css/layout.css"/>
     <link rel="stylesheet" href="./css/main.css"/>
-    <!-- <link rel="stylesheet" href="./css/font.css"/> -->
+    <link rel="stylesheet" href="./css/font.css"/> -->
     <link rel="stylesheet" href="./scss/main.min.css">
   </head>
   <body class="main">
@@ -40,7 +40,7 @@
       <header id="hd">
         <div class="hd-group">
           <div class="hd-logo">
-            <h1 class="logo">
+            <h1 class="logo p-3">
               <a href="#" class="logo-link">
                 <span class="blind">소라클리닉 로고</span>
                 <svg width="177" height="56" viewBox="0 0 177 56" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -218,10 +218,8 @@
                         </div>
                         
                         <div class="hero-title-wrap d-flex text-center text-lg-start flex-column gap-4">
-                          <div class="hero-title">
-                            Skin Booster for
-                            <br />
-                            <span class="hero-title-secondary">your anti-<br>ageing project</span>
+                          <div class="hero-title">Skin Booster <br />
+                            <span class="hero-title-secondary">for your anti-ageing project</span>
                           </div>
                           
                           <p class="hero-desc d-none d-md-block">
@@ -269,9 +267,9 @@
                           <div class="hero-title">
                             <span class="hero-title-secondary">Find your</span>
                             <br />
-                            v-line from
+                            V-line
                             <br>
-                            <our class="hero-title-secondary">our solution</span>
+                            <span class="hero-title-secondary"> from our solution</span>
                           </div>
                           
                           <p class="hero-desc d-none d-md-block">
@@ -311,11 +309,11 @@
         <!--이벤트배너-->
         <section id="sc-event-desc" class="py-5">
           <div class="container text-center">          
-            <div class="row g-4 align-items-stretch">
+            <div class="row g-4">
               <div class="col-12 col-sm-6 col-lg-3">
-                <div class="card shadow-sm card-hover d-flex flex-column h-100">
-                  <div class="card-body d-flex flex-column justify-content-between pb-0 h-100">
-                    <!-- 뱃지 또는 아이콘 위치 (절대 위치 지정 시 필요) -->
+                <div class="card h-100 shadow-sm card-hover position-relative">
+                  <div class="card-body d-flex flex-column pb-0">
+                    <!-- 뱃지위치 (절대 위치 지정) -->
                     <div class="position-absolute top-0 start-0 m-2">
                       <svg width="28" height="36" viewBox="0 0 28 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_295_446)">
@@ -329,19 +327,19 @@
                         </defs>
                       </svg>
                      </div>
-                     <!-- 콘텐츠 중앙 정렬 영역 -->
-                    <div class="d-flex flex-column align-items-center text-center h-100 px-2">
+                     <!-- 콘텐츠 중앙정렬 -->
+                    <div class="flex-center flex-column text-center flex-grow-1 px-2">
                       <h3 class="event-title mb-1">Rejuran Healer 1cc</h3>
                       <p class="event-desc mb-0">*Minimum 2cc<p>
                     </div> 
-                     <!-- 가격 표시 (카드 하단에 고정) -->
+                     <!--가격 표시(하단고정)-->
                     <p class="event-price mt-auto text-end pt-3"><span class="price-original">155,000</span> ₩ 89,000</p>
                   </div>
                 </div>
               </div>
               <div class="col-12 col-sm-6 col-lg-3">
-                <div class="card shadow-sm card-hover d-flex flex-column h-100">
-                  <div class="card-body d-flex flex-column justify-content-between pb-0 h-100">
+                <div class="card h-100 shadow-sm card-hover position-relative">
+                  <div class="card-body d-flex flex-column pb-0">
                     <div class="position-absolute top-0 start-0 m-2">
                       <svg width="28" height="36" viewBox="0 0 28 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_295_449)">
@@ -355,19 +353,19 @@
                         </defs>
                       </svg>                        
                      </div>
-                     <!-- 콘텐츠 중앙 정렬 영역 -->
-                    <div class="d-flex flex-column align-items-center text-center h-100 px-2">
+                     <!-- 콘텐츠 중앙정렬 -->
+                    <div class="flex-center flex-column text-center flex-grow-1 px-2">
                       <h3 class="event-title mb-1">Ulthera Prime 100 Shots</h3>
                       <p class="event-desc mb-0">Next-level skin<p>
                     </div> 
-                     <!-- 가격 표시 (카드 하단에 고정) -->
+                    <!--가격 표시(하단고정)-->
                     <p class="event-price mt-auto text-end"><span class="price-original">590,000</span> ₩ 420,000</p>
                   </div>
                 </div>
               </div>
               <div class="col-12 col-sm-6 col-lg-3">
-                <div class="card shadow-sm card-hover d-flex flex-column h-100">
-                  <div class="card-body d-flex flex-column justify-content-between pb-0 h-100">
+                <div class="card h-100 shadow-sm card-hover position-relative">
+                  <div class="card-body d-flex flex-column pb-0">
                     <div class="position-absolute top-0 start-0 m-2">
                       <svg width="28" height="36" viewBox="0 0 28 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_295_452)">
@@ -381,19 +379,19 @@
                         </defs>
                       </svg> 
                      </div>
-                     <!-- 콘텐츠 중앙 정렬 영역 -->
-                    <div class="d-flex flex-column align-items-center text-center h-100 px-2">
+                     <!-- 콘텐츠 중앙정렬 -->
+                    <div class="flex-center flex-column text-center flex-grow-1 px-2">
                       <h3 class="event-title mb-1">Face Onda 10kJ</h3>
                       <p class="event-desc mb-0">*Minimum 300 Shots<p>
                     </div> 
-                     <!-- 가격 표시 (카드 하단에 고정) -->
+                     <!--가격 표시(하단고정)-->
                     <p class="event-price mt-auto text-end"><span class="price-original">190,000</span> ₩ 99,000 </p>
                   </div>
                 </div>
               </div>
               <div class="col-12 col-sm-6 col-lg-3">
-                <div class="card shadow-sm card-hover d-flex flex-column h-100">
-                  <div class="card-body d-flex flex-column justify-content-between pb-0 h-100">
+                <div class="card h-100 shadow-sm card-hover d-flex flex-column ">
+                  <div class="card-body d-flex flex-column pb-0">
                     <div class="position-absolute top-0 start-0 m-2">
                       <svg width="28" height="36" viewBox="0 0 28 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_295_455)">
@@ -407,12 +405,12 @@
                         </defs>
                       </svg>
                      </div>
-                      <!-- 콘텐츠 중앙 정렬 영역 -->
-                    <div class="d-flex flex-column align-items-center text-center h-100 px-2">
+                      <!-- 콘텐츠 중앙정렬 -->
+                    <div class="flex-center flex-column text-center flex-grow-1 px-2">
                       <h3 class="event-title mb-1">InMode Full Face 1 Mode</h3>
                       <p class="event-desc mb-0">Precise Lifting<p>
                     </div> 
-                    <!-- 가격 표시 (카드 하단에 고정) -->
+                    <!--가격 표시(하단고정)-->
                     <p class="event-price mt-auto text-end"><span class="price-original">135,000</span> ₩ 79,000</p>
                   </div>
                 </div>
@@ -421,78 +419,56 @@
           </div>
         </section>
         <!--상품서비스-->
-        <section id="sc-our-value" class="py-3 d-flex justify-content-center align-items-center">
-          <div class="container py-5 services-con">
-            <div class="mb-4 d-flex flex-row justify-content-between px-4"> 
-              <div class="w-100">
+        <section id="sc-our-value" class="py-3">
+            <div class="container py-5 services-con">
+              <div class="mb-4 px-4">   
                 <h2 class="services-title">Best Treatments In Our Clinic!</h2>
               </div>
-              <!--div class="w-50">
-                <p class="services-dese px-2">Vitae aliquam vestibulum elit adipiscing massa diam in dignissim.<br/> 
-                  Risus tellus libero elementum aliquam etiam.<br/>
-                  Lectus adipiscing est auctor mi quisque nunc non viverra est.</p>
-              </!--div-->
+              <!-- Grid 컨테이너 -->
+              <div class="services-banner px-4">
+                <a href="#" class="svc-card Ulthera_bg" aria-label="Learn more about Ulthera">
+                  <h4 class="services-h4 pt-3">Ulthera</h4>
+                </a>
+                <a href="#" class="svc-card Botox_bg" aria-label="Learn more about Botox">
+                  <h4 class="services-h4 pt-3">Botox</h4>
+                </a>
+                <a href="#" class="svc-card Inmode_bg" aria-label="Learn more about Inmode">
+                  <h4 class="services-h4 pt-3">Inmode</h4>
+                </a>
+                <a href="#" class="svc-card Thermage_bg" aria-label="Learn more about Thermage">
+                  <h4 class="services-h4 pt-3">Thermage</h4>
+                </a>
+              </div>
             </div>
-            <div class="row text-center d-flex justify-content-center services-banner px-4">
-                <!-- Ulthera Card -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <a href="#" class="card-link h-100 w-100">
-                      <div class="card Ulthera_bg h-100 border-0">                 
-                        <h4 class="services-h4 pt-3">Ulthera</h4>
-                      </div>
-                    </a>
-                </div>
-                <!-- Botox Card -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <a href="#" class="card-link h-100 w-100">
-                        <div class="card Botox_bg h-100 border-0">
-                          <h4 class="services-h4 pt-3">Botox</h4>
-                        </div>
-                    </a>
-                </div>
-                <!-- Inmode Card -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <a href="#" class="card-link h-100 w-100">
-                        <div class="card Inmode_bg h-100 border-0">                         
-                          <h4 class="services-h4 pt-3">Inmode</h4>
-                        </div>
-                    </a>
-                </div>    
-                <!-- Thermage Card -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <a href="#" class="card-link h-100 w-100">
-                        <div class="card Thermage_bg h-100 border-0">
-                          <h4 class="services-h4 pt-3">Thermage</h4>
-                        </div>
-                    </a>
-                </div>
-            </div>
-          </div>
         </section>
         <!-- 병원 안내 -->
-        <section id="sc-our-story" class="p-5 mb-5 mb-md-0 section-about">
-          <div class="container d-flex flex-column flex-md-row gap-5 align-items-start about_box">
-            <!-- 왼쪽텍스트박스 -->
-            <div class="d-flex flex-column gap-1 flex-fill">
+        <section id="sc-our-story" class="px-3 px-sm-4 px-md-5 py-5 mb-5 mb-md-0 section-about">
+          <div class="container about_box gap-5">
+            <!-- 왼쪽 텍스트박스 -->
+            <div class="about-left flex-fill">
               <div class="about_txt_box p-4 quote">
                 <h5 class="about_txt_tit mb-1">Don't Become Someone Else. Be Your Best Self.</h5>
-                <p class="about_txt_desc multi-line-ellipsis mb-1">Private Beauty SoRa Clinic emphasizes natural beauty, 
+                <p class="about_txt_desc multi-line-ellipsis-3 mb-1">
+                  Private Beauty SoRa Clinic emphasizes natural beauty, 
                   celebrating each individual’s unique features instead of adhering to societal norms. 
-                  Our mission is to help your personal radiance shine even brighter.</p>
+                  Our mission is to help your personal radiance shine even brighter.
+                </p>
                 <p class="about_txt_doctor mt-3 mb-0">Ki Beom Park Chief Director</p>
               </div>
-              <div class="about_txt_box quote p-4 ms-md-5">
+              <div class="about_txt_box p-4 quote ms-md-5">
                 <h5 class="about_txt_tit mb-1">We enhance your unique features.</h5>
-                <p class="about_txt_desc multi-line-ellipsis mb-1">Every face tells a story. 
+                <p class="about_txt_desc multi-line-ellipsis-3 mb-1">
+                  Every face tells a story. 
                   Just as changing a scene without considering the whole plot creates awkwardness, 
                   treatments that disregard your unique aura and aesthetic preferences rarely satisfy. 
-                  At Private Beauty SoRa Clinic, become your best self, not someone else.</p>
+                  At Private Beauty SoRa Clinic, become your best self, not someone else.
+                </p>
                 <p class="about_txt_doctor mt-3 mb-0">Leslie Taylor Chief Director</p>
               </div>
             </div>    
             <!-- 오른쪽 슬라이더 -->
-            <div class="flex-fill mt-3 d-flex">
-              <div id="clinicCarousel" class="carousel slide h-100 mt-5 mt-lg-0" data-bs-ride="carousel" data-bs-interval="5000">
+            <div class="about-right flex-fill mt-3 mt-md-0">
+              <div id="clinicCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000"> 
                 <!-- Slides -->
                 <div class="carousel-inner h-100">
                   <div class="carousel-item active h-100">
@@ -506,131 +482,118 @@
                   </div>
                 </div>
                 <!-- Indicators -->
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#clinicCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#clinicCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#clinicCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <div class="carousel-indicators mb-0">
+                  <button type="button" data-bs-target="#clinicCarousel" data-bs-slide-to="0" class="active"></button>
+                  <button type="button" data-bs-target="#clinicCarousel" data-bs-slide-to="1"></button>
+                  <button type="button" data-bs-target="#clinicCarousel" data-bs-slide-to="2"></button>
                 </div>
-                <!-- Controls (모바일에서만 표시) -->
-                <button class="carousel-control-prev d-md-none" type="button" data-bs-target="#clinicCarousel" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                </button>
-                <button class="carousel-control-next d-md-none" type="button" data-bs-target="#clinicCarousel" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                </button>
               </div>
             </div>        
           </div>
         </section>
+
         <!-- 의료진 소개 -->
         <section id="sc-doctors">
           <div class="container py-5 doctors-section">
             <div class="doctors-title mb-4">
               <h2 class="fw-semibold">Doctors</h2>
             </div>
-            <!-- DoctorCarousel 시작 -->
             <div id="doctorCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-              <div class="carousel-inner">        
+              <div class="carousel-inner">
+
                 <!-- 슬라이드 1 -->
                 <div class="carousel-item active">
                   <div class="row justify-content-center g-4">
-                    <!-- Doctor 1 -->
-                    <div class="col-md-6">
-                      <div class="d-flex p-3 border rounded">
-                        <div class="doctor-img me-3">
+                    <div class="col-12 col-md-6">
+                      <article class="doctor-card">
+                        <div class="doctor-img">
                           <img src="./assets/images/img-main/doctor1.png" alt="Doctor 3" class="img-fluid">
                         </div>
                         <div class="doctor-info">
-                          <h5 class="doctor-name mb-1">Dr. Leslie Taylor</h5>
+                          <h5 class="doctor-name multi-line-ellipsis-2 mb-1">Dr. Leslie Taylor</h5>
                           <p class="doctor-position mb-3">Doctor</p>
                           <p class="doctor-intro mb-4">Dolor sit amet, consectetur adipiscing elit. Dignissim massa diam elementum habitant fames ac penatibus et.</p>
-                          <div class="doctors-sns d-flex gap-2">
+                          <div class="doctors-sns">
                             <i class="bi bi-facebook"></i>
                             <i class="bi bi-instagram"></i>
                             <i class="bi bi-twitter"></i>
                             <i class="bi bi-linkedin"></i>
                           </div>
                         </div>
-                      </div>
+                      </article>
                     </div>
-                    <!-- Doctor 2 -->
-                    <div class="col-md-6">
-                      <div class="d-flex p-3 border rounded">
-                        <div class="doctor-img me-3">
-                          <img src="./assets/images/img-main/doctor2.png" alt="Doctor 3" class="img-fluid">
+                    <div class="col-12 col-md-6">
+                      <article class="doctor-card">
+                        <div class="doctor-img">
+                          <img src="./assets/images/img-main/doctor2.png" alt="Doctor 4" class="img-fluid">
                         </div>
                         <div class="doctor-info">
-                          <h5 class="doctor-name mb-1">Dr. Zachary Brown</h5>
+                          <h5 class="doctor-name multi-line-ellipsis-2 mb-1">Dr. Zachary Brown</h5>
                           <p class="doctor-position mb-3">Doctor</p>
                           <p class="doctor-intro mb-4">Dolor sit amet, consectetur adipiscing elit. Dignissim massa diam elementum habitant fames ac penatibus et.</p>
-                          <div class="doctors-sns d-flex gap-2">
+                          <div class="doctors-sns">
                             <i class="bi bi-facebook"></i>
                             <i class="bi bi-instagram"></i>
                             <i class="bi bi-twitter"></i>
                             <i class="bi bi-linkedin"></i>
                           </div>
                         </div>
-                      </div>
+                      </article>
                     </div>
                   </div>
                 </div>
-                <!-- 슬라이드 1 끝-->
-                <!-- 슬라이드 2 시작 -->
+
+                <!-- 슬라이드 2 -->
                 <div class="carousel-item">
                   <div class="row justify-content-center g-4">
-                    <!-- Doctor 3 -->
-                    <div class="col-md-6">
-                      <div class="d-flex p-3 border rounded">
-                        <div class="doctor-img me-3">
+                    <div class="col-12 col-md-6">
+                      <article class="doctor-card">
+                        <div class="doctor-img">
                           <img src="./assets/images/img-main/doctor1.png" alt="Doctor 3" class="img-fluid">
                         </div>
                         <div class="doctor-info">
-                          <h5 class="doctor-name mb-1">Dr. Leslie Taylor</h5>
+                          <h5 class="doctor-name multi-line-ellipsis-2 mb-1">Dr. Leslie Taylor</h5>
                           <p class="doctor-position mb-3">Doctor</p>
                           <p class="doctor-intro mb-4">Dolor sit amet, consectetur adipiscing elit. Dignissim massa diam elementum habitant fames ac penatibus et.</p>
-                          <div class="doctors-sns d-flex gap-2">
+                          <div class="doctors-sns">
                             <i class="bi bi-facebook"></i>
                             <i class="bi bi-instagram"></i>
                             <i class="bi bi-twitter"></i>
                             <i class="bi bi-linkedin"></i>
                           </div>
                         </div>
-                      </div>
+                      </article>
                     </div>
-                    <!-- Doctor 4 -->
-                    <div class="col-md-6">
-                      <div class="d-flex p-3 border rounded">
-                        <div class="doctor-img me-3">
-                          <img src="./assets/images/img-main/doctor2.png" alt="Doctor 3" class="img-fluid">
+                    <div class="col-12 col-md-6">
+                      <article class="doctor-card">
+                        <div class="doctor-img">
+                          <img src="./assets/images/img-main/doctor2.png" alt="Doctor 4" class="img-fluid">
                         </div>
                         <div class="doctor-info">
-                          <h5 class="doctor-name mb-1">Dr. Zachary Brown</h5>
+                          <h5 class="doctor-name multi-line-ellipsis-2 mb-1">Dr. Zachary Brown</h5>
                           <p class="doctor-position mb-3">Doctor</p>
                           <p class="doctor-intro mb-4">Dolor sit amet, consectetur adipiscing elit. Dignissim massa diam elementum habitant fames ac penatibus et.</p>
-                          <div class="doctors-sns d-flex gap-2">
+                          <div class="doctors-sns">
                             <i class="bi bi-facebook"></i>
                             <i class="bi bi-instagram"></i>
                             <i class="bi bi-twitter"></i>
                             <i class="bi bi-linkedin"></i>
                           </div>
                         </div>
-                      </div>
+                      </article>
                     </div>
                   </div>
                 </div>
-                <!-- 슬라이드 2 // -->
               </div>
-            <!--Pagination -->
-            <div class="carousel-indicators justify-content-center">
-              <button type="button" data-bs-target="#doctorCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#doctorCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#doctorCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>                
+              <!-- Pagination-->
+              <div class="carousel-indicators justify-content-center">
+                <button type="button" data-bs-target="#doctorCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#doctorCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              </div>
             </div>
-            <!--Pagination // -->
-            </div>
-            <!-- Carousel // -->
           </div>
         </section>
+
         <!-- 연락처 지도-->
         <section id="sc-contact" class="container py-5">
           <div class="contact-group container d-flex justify-content-between align-items-start align-items-sm-center flex-column flex-md-row rounded-4 gap-3">

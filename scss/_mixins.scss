@@ -85,25 +85,30 @@
   }
 }
 
-// px 숫자를 clamp로 변환하는 함수
-@function fluid-fs($px) {
-  // unitless 숫자도 px로 안전 변환
-  $min: if(math.is-unitless($px), $px * 1px, $px);
-  $minvw: if(math.is-unitless($min-vw), $min-vw * 1px, $min-vw);
-  $maxvw: if(math.is-unitless($max-vw), $max-vw * 1px, $max-vw);
-  $grow: (if(math.is-unitless($px), $px, $min / 1px) - $min-fs); // px 차이
+
+// =====================================
+// px → clamp() 변환 (font-size, line-height 공용)
+// =====================================
+@function fluid-clamp($min, $max, $min-vw: 320, $max-vw: 1920) {
+  // px → rem
+  $min-rem: ($min / 16) * 1rem;
+  $max-rem: ($max / 16) * 1rem;
+  $grow-rem: (($max - $min) / 16) * 1rem; // ← 증가폭도 rem로
 
   @return clamp(
-    $min,
-    calc(#{$min} + #{$grow}px * ((100vw - #{$minvw}) / #{($maxvw - $minvw)})),
-    ($min + 4px) // 상한: +4px (원하면 바꿔도 됨)
+    $min-rem,
+    calc(#{$min-rem} + #{$grow-rem} * ((100vw - #{$min-vw}px) / #{($max-vw - $min-vw)})),
+    $max-rem
   );
 }
 
-// 컴포넌트에서 바로 쓰는 믹스인
-@mixin fs-px($px) {
-  font-size: fluid-fs($px) !important;
+@mixin fs-px($min, $max: null) {
+  @if $max == null {
+    // 단일 값이면 그냥 px → rem 변환
+    font-size: ($min / 16) * 1rem;
+  } @else {
+    // min~max 유동 폰트
+    font-size: fluid-clamp($min, $max);
+  }
 }
-
-//font 고정상수 함수
-@function fs($px) { @return map.get($fs-map, $px); }
+@mixin lh-px($min, $max) { line-height: fluid-clamp($min, $max); }
