@@ -135,6 +135,11 @@ body.main #hd:not(.scrolled) .nav-list > li > .sub {
               padding: 15px 20px;
             }
           }
+          .nav-link {
+            &:hover {
+              color: $colorSecondary;
+            }
+          }
         }
 
         .hd-nav-wrap .top-menu {
@@ -249,22 +254,26 @@ body.main #hd:not(.scrolled) .nav-list > li > .sub {
 
       .lang-btn-wrap {
         position: relative;
-        &:hover {
-          svg path,
-          .lang-txt {
-            stroke: $primaryColor2;
-            color: $primaryColor2; 
-            transition: stroke 0.3s, color 0.3s;
-          }
-        }
         .lang-btn {
           display: flex;
           align-items: center;
+          &:hover {
+            svg path,
+            .lang-txt {
+              stroke: $colorSecondary;
+              color: $colorSecondary;
+              transition: stroke 0.3s, color 0.3s;
+              // &:focus {
+              //   color: $colorSecondary;
+              // }
+            }
+          }
           svg {
             width: 24px;
             height: 24px;
           }
         }
+
 
         .lang-txt {
           display: inline-block;
@@ -304,9 +313,9 @@ body.main #hd:not(.scrolled) .nav-list > li > .sub {
           font-size: 18px;
           font-weight: 400;
           transition: all 0.3s;
-          color: $colorDesc;
+          color: $basicColor;
           &:hover {
-            color: $primaryColor2;
+            color: $colorSecondary;
           }
         }
       }
