@@ -41,7 +41,7 @@
   <body>
     <div class="wrap">
       <header id="hd">
-        <div class="hd-group border-bottom">
+        <div class="hd-group">
           <div class="hd-logo">
             <h1 class="logo">
               <a href="index.html" class="logo-link">
@@ -115,6 +115,7 @@
               </ul>
             </nav>
           </div>
+          <i class="hd-dim"></i>
           <div class="hd-sub-nav">
             <button class="bn-btn fw500 d-none d-sm-block">BOOK NOW</button>
             <div class="lang-btn-wrap">
@@ -141,8 +142,9 @@
               </div>
             </div>
           </div>
+          
         </div>
-        <div class="mo-sub-menu bg-white d-lg-none border-bottom bg-transparent">
+        <div class="mo-sub-menu d-lg-none">
           <ul class="d-flex justify-content-center">
             <li class="nav-item"><a class="nav-link" href="event-page.html">Event</a></li>
             <li class="nav-item"><a class="nav-link" href="#sc-contact">Contact</a></li>
@@ -289,22 +291,45 @@
 
     <div class="quick-group gototop">
       <div class="quick-area">
-        <ul class="quick-list d-flex flex-column gap-2">
-            <li class="d-flex justify-content-center align-items-center lh-1">
-                <a href="https://www.instagram.com/" class="quick-link" target="_blank" rel="noopener noreferrer">
-                    <img src="./assets/images/img-icon/ig.svg" alt="인스타그램아이콘">
-                </a>
-            </li>
-            <li class="d-flex justify-content-center align-items-center lh-1">
-                <a href="https://www.kakaocorp.com/service/KakaoTalk" class="quick-link" target="_blank" rel="noopener noreferrer">
-                    <img src="./assets/images/img-icon/kakaotalk.svg" alt="카카오톡아이콘">
-                </a>
-            </li>
-            <li class="d-flex justify-content-center align-items-center lh-1">
-                <a href="#" class="gototop-link">
-                    <img src="./assets/images/img-icon/q_top.svg" alt="gototopicon" style="width: 24px; height: 24px;">
-                </a>
-            </li>
+        <ul class="quick-menu">
+          <li>
+            <a href="https://instagram.com" class="quick-item instagram" target="_blank">
+              <img src="./assets/images/img-icon/instagram_floating_white.png" alt="인스타그램" class="icon" />
+              <span class="text">인스타그램</span>
+            </a>
+          </li>
+          <!-- <li>
+            <a href="tel:010-1234-5678" class="quick-item phone">
+              <img src="icons/phone.png" alt="전화문의" class="icon" />
+              <span class="text">전화문의</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="quick-item calendar">
+              <img src="icons/calendar.png" alt="예약하기" class="icon" />
+              <span class="text">예약하기</span>
+            </a>
+          </li> -->
+          <li>
+            <a href="#" class="quick-item talk">
+              <img src="./assets/images/img-icon/kakao-talk_floating_white.png" alt="카톡상담" class="icon" />
+              <span class="text">카톡상담</span>
+            </a>
+          </li>
+          <!-- <li>
+            <a href="#" class="quick-item gift">
+              <img src="icons/gift.png" alt="이벤트" class="icon" />
+              <span class="text">이벤트</span>
+            </a>
+          </li> -->
+          <li class="">
+            <a href="#" class="quick-item quick-link gototop-link">
+              <svg class="icon" viewBox="0 0 22 26" xmlns="http://www.w3.org/2000/svg" fill="#fff" aria-hidden="true">
+                <path d="M9.43 24.38V5.55L2.68 12.52a1 1 0 0 1-1.46-1.3L9.89 0.48a1 1 0 0 1 1.44 0l9.43 9.75a1 1 0 0 1-1.46 1.3L12.57 5.55v18.83A1.63 1.63 0 0 1 11 26a1.63 1.63 0 0 1-1.57-1.63Z"/>
+              </svg>
+              <span class="text">상단바로가기</span>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
@@ -314,6 +339,7 @@
 
     <!-- Bootstrap 5 JS CDN (Popper 포함) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/header.js"></script>
 
 
   </body>

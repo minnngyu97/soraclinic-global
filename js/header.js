@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const gototopBtn = document.querySelector('.gototop');
 
     let lastScroll = 0;
-    const isMobile = () => window.matchMedia('(max-width: 992px)').matches;
+    const isMobile = () => window.matchMedia('(max-width: 991px)').matches;
 
     // 2. 모바일 메뉴 열고 닫기
     function toggleMobileMenu(isOpen) {
@@ -127,10 +127,22 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // 12. 퀵메뉴 호버
+    // document.querySelectorAll('.quick-item').forEach(item => {
+    //     item.addEventListener('mouseenter', () => item.classList.add('active'));
+    //     item.addEventListener('mouseleave', () => item.classList.remove('active'));
+    // });
+
+    // PC(마우스 있는 환경)에서만 실행
+    if (window.matchMedia('(hover: hover)').matches) {
     document.querySelectorAll('.quick-item').forEach(item => {
-        item.addEventListener('mouseenter', () => item.classList.add('active'));
-        item.addEventListener('mouseleave', () => item.classList.remove('active'));
+        item.addEventListener('mouseenter', () => {
+        item.classList.add('active');
+        });
+        item.addEventListener('mouseleave', () => {
+        item.classList.remove('active');
+        });
     });
+    }
 
     // 13. 초기화 실행
     initMenuEvents();

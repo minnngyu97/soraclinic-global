@@ -1,7 +1,7 @@
 /* 메인에서만 기본은 투명 */
 body.main #hd {
   background-color: transparent;
-  transition: background-color 0.3s ease;
+  // transition: background-color 0.3s ease;
 }
 
 /* 스크롤 상태 → 흰색 */
@@ -12,7 +12,7 @@ body.main #hd.scrolled {
 /* 서브메뉴 기본 흰색 */
 .nav-list > li > .sub {
   background-color: #fff;
-  transition: background-color 0.3s ease;
+  // transition: background-color 0.3s ease;
 }
 
 /* 메인 최상단 + header가 투명일 때 → 서브메뉴도 투명 */
@@ -26,6 +26,7 @@ body.main #hd:not(.scrolled) .nav-list > li > .sub {
   left: 0;
   z-index: 100;
   width: 100%;
+  border-bottom: 1px solid $colorSecondary;
   background-color: #fff;
   -webkit-transition: height 0.2s linear 0.1s, -webkit-transform 0.2s linear;
   transition: height 0.2s linear 0.1s, -webkit-transform 0.2s linear;
@@ -73,12 +74,17 @@ body.main #hd:not(.scrolled) .nav-list > li > .sub {
       transform: translateY(-50%);
       left: 20px;
       z-index: 7;
+      .svg {
+        @media (max-width: 768px) {
+          width: 140px;
+        }
+      }
     }
 
     .hd-nav {
       display: flex;
       justify-content: center;
-      @media(max-width: 992px){
+      @media(max-width: 991px){
         justify-content: start;
         position: fixed;
         top: 0;
@@ -101,13 +107,13 @@ body.main #hd:not(.scrolled) .nav-list > li > .sub {
       }
 
       .nav-area {
-        @media (max-width: 992px) {
+        @media (max-width: 991px) {
           width: 100%;
         }
         .nav-list {
           display: flex;
           color: $colorDesc;
-          @media (max-width: 992px) {
+          @media (max-width: 991px) {
             flex-direction: column;
             align-items: start;
           }
@@ -118,7 +124,7 @@ body.main #hd:not(.scrolled) .nav-list > li > .sub {
           align-items: center;
           height: 95px;
           padding: 0 15px;
-          @media (max-width: 992px) {
+          @media (max-width: 991px) {
             flex-direction: column;
             align-items: center;
             width: 100%;
@@ -158,15 +164,15 @@ body.main #hd:not(.scrolled) .nav-list > li > .sub {
           width: 100vw;
           top: 95px;
           left: 50%;
-          border-top: 1px solid #dee2e6;
-          border-bottom: 1px solid #dee2e6;
+          border-top: 1px solid $colorSecondary;
+          border-bottom: 1px solid $colorSecondary;
           transform: translateX(-50%);
           transition: 0.5s;
         }
   
         .depth1-item {
           padding: 15px;
-          @media (max-width: 992px) {
+          @media (max-width: 991px) {
             padding: unset;            
           }
         }
@@ -175,7 +181,7 @@ body.main #hd:not(.scrolled) .nav-list > li > .sub {
           display: none;
           &.show {
             display: flex;
-            @media (max-width: 992px) {
+            @media (max-width: 991px) {
               position: unset;
               flex-direction: column;
               width: calc(100% - 40px);
@@ -297,6 +303,7 @@ body.main #hd:not(.scrolled) .nav-list > li > .sub {
     }
 
     .hd-mo-nav-btn {
+      display: none;
       position: relative;
       cursor: pointer;
       .trigger {
@@ -334,8 +341,8 @@ body.main #hd:not(.scrolled) .nav-list > li > .sub {
         top: 50%;
         transform: rotate(-45deg)
       }
-      @media (min-width:992px) {
-        display: none;
+      @media (max-width:991px) {
+        display: block;
       }
     }
 
@@ -343,6 +350,7 @@ body.main #hd:not(.scrolled) .nav-list > li > .sub {
 
   .mo-sub-menu {
     height: 60px;
+    border-top: 1px solid $colorSecondary;
     .nav-link {
       padding: 20px;
     }
@@ -406,7 +414,8 @@ body.menu-open {
             transition: opacity 0.3s ease, transform 0.3s ease;
           }
 
-          &:hover {
+          // JS에서 붙여주는 상태
+          &.active {
             width: 160px;
 
             .text {
@@ -414,8 +423,6 @@ body.menu-open {
               transform: translateX(0);
             }
           }
-
-          
         }
       }
     }
@@ -447,22 +454,37 @@ body.menu-open {
 //footer
 
 #ft {
+  background: #E6F7F9;
   .ft-group {
-
-
     .ft-info-group {
+      color: $colorSecondary;
       .info-group-left {
+        font-size: 14px;
+        font-weight: $fw300;
         @media (max-width: 768px) {
           text-align: center;
         }
       }
       .info-group-right {
+        font-size: 12px;
+        font-weight: $fw400;
         text-align: end;
         @media (max-width: 768px) {
           text-align: center;
         }
       }
     }
+
+    .ft-social img {
+        display: block;
+        width: 24px;
+        height: 24px;
+    }
   }
+}
+
+
+.ft-font-color {
+    color: $colorSecondary;
 }
 
