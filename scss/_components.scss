@@ -5,7 +5,11 @@
 @import "./_mixins.scss";
 @import "./_typography.scss";
 
-.multi-line-ellipsis {
+
+.multi-line-ellipsis-2 {
+  @include line-clamp(2);
+}
+.multi-line-ellipsis-3 {
   @include line-clamp(3);
 }
 
@@ -25,3 +29,41 @@
   100% { box-shadow: 0 0 16px hsla(174, 95%, 45%, 0.4); }
 }
 
+/* Quick */
+.quick-group {
+  .quick-link {
+    width: 48px;
+    height: 48px;
+    background-color: $colorSubbg;
+
+    > .icon {
+      color: $colorMuted; // 원하는 색상
+      width: 20px;
+      height: auto;
+    }
+  }
+
+  li {
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+
+/* Go to Top */
+.gototop {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: block;
+  transform: translateY(30px);
+  opacity: 0;
+  transition: 0.5s;
+  z-index: 9999;
+
+  &.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

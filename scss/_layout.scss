@@ -12,10 +12,19 @@
   letter-spacing: 1.1px;
 }
 
-// Utility
-.text-muted {
-  color: $colorMuted;
+.flex-center {@include flex-center;}
+.flex-between{@include flex-between;}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
 }
+
+//장애인 웹접근성용
+.blind { @include blind;}
+
+// Utility
+.text-muted {color: $colorMuted;}
 
 .bg-primary {
   background-color: $primaryColor !important;
@@ -42,10 +51,34 @@
   top: 0.5rem;
 }
 
-//푸터
-footer {
-  color:$basicColor;
+/* Footer */
+#ft {
+  background: $basicColor;
+
+  .ft-info-group {
+    color:$colorSecondary;
+
+    .info-group-left {
+      @include fs-px(12);
+      font-weight:$fw300;
+    }
+
+    .info-group-right {
+      @include fs-px(12);
+      font-weight: $fw400;
+    }
+  }
+
+  .ft-social {
+    img {
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+  }
 }
 
-
-
+/* Footer font util */
+.ft-font-color {
+  color:$colorSecondary;
+}

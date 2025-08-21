@@ -29,12 +29,6 @@ $spaces: (0, 0.25rem, 0.5rem, 1rem, 2rem, 3rem, 4rem);
 // Font Size Scale (12,14,16,18,20,24,26,28px)
 $font-sizes: (0.75rem, 0.875rem, 1rem, 1.125rem, 1.25rem, 1.5rem, 1.625rem, 1.75rem);
 
-// Font 고정 사이즈
-$fs-map: (
-  44: 2.75rem,
-  64: 4rem,
-);
-
 // 개별 변수 (컴포넌트에서 사용)
 $fw100: 100; $fw200: 200; $fw300: 300; $fw400: 400;
 $fw500: 500; $fw600: 600; $fw700: 700; $fw800: 800; $fw900: 900;

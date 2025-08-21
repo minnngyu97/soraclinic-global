@@ -78,7 +78,7 @@
   }
 
   .services-title {
-    font-size: fs(64);
+    font-size: $eventTit;
     font-weight: $fw500;
     color: #fff;
     letter-spacing: 0.8px;
@@ -98,35 +98,148 @@
     color: $basicColor;
   }
 
-  .services-banner > div {
-    min-height: calc(100vh - 500px);
-    padding: 2vh 0.5vw;
+  /* Grid: 4열 → 뷰포트 줄면 3/2열로 자동 전환 */
+  .services-banner {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    padding-inline: 12px;
   }
 
-  [class$="_bg"] {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 0 0;
+  /* 제목 오버레이 */
+  .services-h4 {
+    color: $basicColor;
+    @include fs-px(26);
+    font-weight: $fw400;
+    line-height: 1.2;
+    text-align: center;
+    z-index: 2;
   }
-  .Ulthera_bg { background-image: url(../assets/images/img-main/original_tr1.png); }
-  .Botox_bg   { background-image: url(../assets/images/img-main/original_tr2.png); }
-  .Inmode_bg  { background-image: url(../assets/images/img-main/original_tr3.png); }
-  .Thermage_bg{ background-image: url(../assets/images/img-main/original_tr4.png); }
+
+  .svc-card {
+    position: relative;
+    display: block;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    background: center / cover no-repeat;
+    /* 높이 생성 가로/세로 */
+    aspect-ratio: 9 / 10;
+    /* 바닥값 */
+    min-height: clamp(280px, 26vw, 380px);
+    transition: transform .18s ease;
+  }
+  .svc-card:hover   { transform: translateY(-2px); }
+  .svc-card:active  { transform: translateY(0); }
+  .svc-card:focus-visible { outline: none; }
+
+  /* 오버레이 (호버시 딤) */
+  .svc-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.8);
+    opacity: 0;  /* 기본은 투명 */
+    transition: opacity .18s ease;
+    pointer-events: none;
+    z-index: 1; 
+  }
+  .svc-card:hover::after,
+  .svc-card:focus-visible::after { opacity: .25; }
+
+  /* aspect-ratio 미지원 대비 */
+  @supports not (aspect-ratio: 1) {
+    .svc-card { aspect-ratio: auto; }
+    .svc-card::before {
+      content: "";
+      display: block;
+      padding-top: 111.111%; /* 9 / 16 = 0.5625 → 56.25% */
+    }
+  }
+
+  /* 개별 배경 이미지 */
+  .Ulthera_bg  { background-image: url('../assets/images/img-main/original_tr1.png'); }
+  .Botox_bg    { background-image: url('../assets/images/img-main/original_tr2.png'); }
+  .Inmode_bg   { background-image: url('../assets/images/img-main/original_tr3.png'); }
+  .Thermage_bg { background-image: url('../assets/images/img-main/original_tr4.png'); }
+  
+  /* 태블릿 2열 */
+  @media (max-width: 992px) {
+    .services-banner {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 430px) {
+    .services-title {
+      font-size: $subH2;
+      line-height: 1;
+    }
+    .services-banner {
+      grid-template-columns: 1fr;  /* 1단 */
+      gap: 12px;                
+      padding-inline: 0.5rem;  /* 좌우 여백 */
+    }
+
+    .svc-card {
+      aspect-ratio: 4 / 3;  /* 높이 더 길게 (모바일 보기 좋게) */
+      min-height: 0;  /* 또는: min-height: unset; */
+      background-position: center top; /* (선택) 위쪽 포커싱이 자연스러우면 유지 */
+    }
+
+    /* aspect-ratio 미지원 브라우저 fallback도 4:3으로 맞춤 */
+    @supports not (aspect-ratio: 1) {
+      .svc-card::before {
+        padding-top: 75%;  /* 4/3 = 75% */
+      }
+    }
+  }
+   
 }
 
 //병원소개
 #sc-our-story {
-  .section-about {
+  &.section-about {
     background-color: $colorSubbg;
     background-image: url(../assets/images/img-main/about_bg_circle.png);
     background-repeat: no-repeat;
     background-size: 600px;
-    background-position: right bottom;
+    background-position: right top;
+  }
+  .about_box {
+    display: flex;
+    flex-direction: column; // 모바일에서는 세로
+    gap: 2rem;
+
+    @media (min-width: 768px) {
+      flex-direction: row;   // md 이상에서는 가로
+      align-items: stretch;  // 양쪽 컬럼 높이 맞추기
+    }
+  }
+  .about-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .5rem; 
+    flex: 1;
+  }
+
+  .about-right {
+    @include flex-center;  // 세로 중앙 + 가로 가운데
+    align-items: stretch;
+    flex: 1;
   }
 
   #clinicCarousel {
     max-width: 500px;
     margin: 0 auto;
+  }
+  // 캐러셀 내부 높이 맞춤 (선택사항)
+  #clinicCarousel,
+  #clinicCarousel .carousel-inner,
+  #clinicCarousel .carousel-item,
+  #clinicCarousel img {
+    height: 100%;
   }
 
   .about_txt_box {
@@ -136,9 +249,10 @@
 
   .about_txt_tit {
     @include fs-px(24);
+    @include lh-px(20, 24);
     color: $colorMuted;
     font-weight: $fw500;
-    line-height: 2.3rem;
+   
   }
 
   .about_txt_desc {
@@ -153,49 +267,37 @@
   .carousel-inner img {
     border-radius: 20px;
   }
+  .quote {
+   position: relative;
+    /* 기본: 모바일에서 작아지고 데스크톱 최대 2em */
+   --quote-size: clamp(1.2em, 3.5vw, 2em);
 
-  @media (max-width: 720px) {
-    .carousel-control-prev,
-    .carousel-control-next {
-      display: none !important;
-    } // 추후 부스트랩 유틸클래스 활용 d-none d-md-block 
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: var(--quote-size);
+    height: var(--quote-size);
+    background-color: currentColor;
+    color: $colorSub;
+    mask-size: contain;
+    mask-repeat: no-repeat;
   }
 
-  .quote {
-    position: relative;
+  &::before {
+    top: 0; left: 0;
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 43 31'%3E%3Cpath d='M18.459 0V18.25H9.33399L15.4173 30.4167H6.29232L0.208984 18.25V0H18.459ZM42.7923 0V18.25H33.6673L39.7507 30.4167H30.6257L24.5423 18.25V0H42.7923Z' fill='%2390C6CD'/%3E%3C/svg%3E");
+  }
 
-    &::before {
-      content: "";
-      display: inline-block;
-      width: 2em;
-      height: 2em;
-      background-color: currentColor;
-      color: $colorSub;
-      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 43 31'%3E%3Cpath d='M18.459 0V18.25H9.33399L15.4173 30.4167H6.29232L0.208984 18.25V0H18.459ZM42.7923 0V18.25H33.6673L39.7507 30.4167H30.6257L24.5423 18.25V0H42.7923Z' fill='%2390C6CD'/%3E%3C/svg%3E");
-      mask-size: contain;
-      mask-repeat: no-repeat;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-
-    &::after {
-      content: "";
-      display: inline-block;
-      width: 2em;
-      height: 2em;
-      background-color: currentColor;
-      color: $colorSub;
-      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 43 31'%3E%3Cg transform='scale(1,-1) translate(0,-31)'%3E%3Cpath d='M18.459 0V18.25H9.33399L15.4173 30.4167H6.29232L0.208984 18.25V0H18.459ZM42.7923 0V18.25H33.6673L39.7507 30.4167H30.6257L24.5423 18.25V0H42.7923Z' fill='%2390C6CD'/%3E%3C/g%3E%3C/svg%3E");
-      mask-size: contain;
-      mask-repeat: no-repeat;
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      transform: rotate(180deg);
-    }
+  &::after {
+    bottom: 0; right: 0; transform: rotate(180deg);
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 43 31'%3E%3Cg transform='scale(1,-1) translate(0,-31)'%3E%3Cpath d='M18.459 0V18.25H9.33399L15.4173 30.4167H6.29232L0.208984 18.25V0H18.459ZM42.7923 0V18.25H33.6673L39.7507 30.4167H30.6257L24.5423 18.25V0H42.7923Z' fill='%2390C6CD'/%3E%3C/g%3E%3C/svg%3E");
   }
 }
+
+}
+
 //의사소개
 #sc-doctors {
   .doctors-title {
@@ -203,60 +305,87 @@
     font-weight: $fw600;
   }
 
+  .doctor-card {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid rgba(0,0,0,.08);
+    border-radius: .5rem;
+    background: #fff;
+    height: 100%;   
+  }
+
+  .doctor-img,
+  .doctor-info {
+    display: block;
+  }
+  .doctor-info {
+    display: flex;
+    flex-direction: column;
+  }
+  /* 모바일 기본( <768px ) / 1열(마크업의 col-12) / 내부 5:5 / 이미지 1:1*/
+  .doctor-img,
+  .doctor-info {
+    flex: 1 1 0; 
+  }
+
   .doctor-img img {
     width: 100%;
     height: 100%;
+    display: block;
     object-fit: cover;
+    aspect-ratio: 1 / 1;     // 모바일:정사각
+    border-radius: .375rem;
   }
-
   .doctor-name {
     @include fs-px(24);
-    font-weight:$fw600;
+    @include lh-px(10, 14);
+    font-weight: $fw600;
   }
-
   .doctor-position,
   .doctor-intro {
     @include fs-px(14);
   }
+  .doctor-position { color: $colorMuted; }
+  .doctor-intro    { color: $colorText;  margin-bottom: 1rem; }
 
-  .doctor-position {
-    color: $colorMuted;
-  }
+  /* SNS는 카드 하단 고정 */
+  .doctors-sns {
+    margin-top: auto;
+    display: flex;
+    gap: .5rem;
 
-  .doctor-intro {
-    color: $colorText;
-  }
-
-  .doctors-sns i {
-    @include fs-px(18);
-    color: $colorSubbg;
-    transition: color 0.2s ease;
-
-    &:hover {
-      color: $primaryColor;
+    i {
+      @include fs-px(18);
+      color: $colorSubbg;
+      transition: color .2s ease;
+      &:hover { color: $primaryColor; }
     }
   }
-
-  .carousel-inner {
-    padding-top: 10px;
-    padding-bottom: 10px;
+  /* 한 슬라이드 내 동일 높이 보장 */
+  .carousel-item .row > [class*="col-"] {
+    display: flex;   // 열 자체를 flex
   }
 
+  /* 캐러셀 여백/인디케이터 */
+  .carousel-inner { padding: 10px 0; }
   .carousel-indicators {
     bottom: auto;
-
     [data-bs-target] {
       background-color: $primaryColor;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
+      width: 10px; height: 10px; border-radius: 50%;
     }
+    .active { background-color: $colorPoint; }
+  }
 
-    .active {
-      background-color: $colorPoint;
-    }
+  /* md 이상( ≥768px ) - 2열 / 내부 40:60 / 이미지 4:5 */
+  @media (min-width: 768px) {
+    .doctor-img  { flex: 0 0 40%; }
+    .doctor-info { flex: 1 1 60%; }
+    .doctor-img img { aspect-ratio: 4 / 5;}
   }
 }
+
 //contact_오시는길
 #sc-contact {
   &.container {
@@ -272,7 +401,7 @@
   }
 
   h2 {
-    font-size: fs(44);
+    font-size: $subH2;
     color: $primaryColor ;
     letter-spacing: 0.44px;
   }
