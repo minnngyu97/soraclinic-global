@@ -393,6 +393,9 @@ body.menu-open {
   bottom: 10px;
   z-index: 7;
   pointer-events: none;
+  transform: translateY(30px);
+  transition: 0.5s;
+  opacity: 0;
 
   .quick-area {
     .quick-menu {
@@ -455,20 +458,10 @@ body.menu-open {
   }
 }
 
-// @media (max-width: 991px) {
-//   .quick-group .quick-area .quick-menu li a.quick-item,
-//   .quick-group .quick-area .quick-menu li a.quick-item.active {
-//     width: 50px !important;
-//     transition: none !important;
-//   }
-
-//   .quick-group .quick-area .quick-menu li a.quick-item .text {
-//     display: none !important;
-//   }
-// }
-
 .quick-group.active {
   pointer-events: auto;
+  transform: translateY(0);
+  opacity: 1;
 }
 
 
