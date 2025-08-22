@@ -1115,62 +1115,6 @@ p, .text-body {
   overflow: hidden;
 }
 
-@keyframes gradient-shift {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-@keyframes glow {
-  0% {
-    box-shadow: 0 0 8px hsla(174, 95%, 45%, 0.2);
-  }
-  100% {
-    box-shadow: 0 0 16px hsla(174, 95%, 45%, 0.4);
-  }
-}
-/* Quick */
-.quick-group .quick-link {
-  width: 48px;
-  height: 48px;
-  background-color: #cbf3f0;
-}
-.quick-group .quick-link > .icon {
-  color: #777F81;
-  width: 20px;
-  height: auto;
-}
-.quick-group li img {
-  width: 32px;
-  height: 32px;
-}
-
-/* Go to Top */
-.gototop {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  display: block;
-  transform: translateY(30px);
-  opacity: 0;
-  transition: 0.5s;
-  z-index: 9999;
-}
-.gototop.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .fs-12 {
   font-size: clamp(12px, 12px + (12 - 12) * (100vw - 320px) / (1600), 16px) !important;
 }
@@ -1462,6 +1406,30 @@ p, .text-body {
   min-height: 600px;
 }
 
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 8px hsla(174, 95%, 45%, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 16px hsla(174, 95%, 45%, 0.4);
+  }
+}
 .sc-slide {
   position: relative;
   background-size: 400% 400%;
@@ -1538,7 +1506,6 @@ p, .text-body {
 
 .hero-badge-text {
   font-size: 1rem;
-  width: -moz-fit-content;
   width: fit-content;
   animation: glow 2s infinite alternate;
   color: #9AB4B7;
@@ -1606,8 +1573,7 @@ p, .text-body {
 
 .hero-image {
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   aspect-ratio: 4/3;
   transition: transform 0.7s;
 }
@@ -1629,8 +1595,7 @@ p, .text-body {
 .hero-product-img {
   width: 6rem;
   height: 6rem;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 0.75rem;
   border: 1px solid hsla(174, 95%, 45%, 0.2);
 }
@@ -2250,23 +2215,19 @@ p, .text-body {
   height: var(--quote-size);
   background-color: currentColor;
   color: #9668fa;
-  -webkit-mask-size: contain;
-          mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-          mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-repeat: no-repeat;
 }
 #sc-our-story .quote::before {
   top: 0;
   left: 0;
-  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 43 31'%3E%3Cpath d='M18.459 0V18.25H9.33399L15.4173 30.4167H6.29232L0.208984 18.25V0H18.459ZM42.7923 0V18.25H33.6673L39.7507 30.4167H30.6257L24.5423 18.25V0H42.7923Z' fill='%2390C6CD'/%3E%3C/svg%3E");
-          mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 43 31'%3E%3Cpath d='M18.459 0V18.25H9.33399L15.4173 30.4167H6.29232L0.208984 18.25V0H18.459ZM42.7923 0V18.25H33.6673L39.7507 30.4167H30.6257L24.5423 18.25V0H42.7923Z' fill='%2390C6CD'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 43 31'%3E%3Cpath d='M18.459 0V18.25H9.33399L15.4173 30.4167H6.29232L0.208984 18.25V0H18.459ZM42.7923 0V18.25H33.6673L39.7507 30.4167H30.6257L24.5423 18.25V0H42.7923Z' fill='%2390C6CD'/%3E%3C/svg%3E");
 }
 #sc-our-story .quote::after {
   bottom: 0;
   right: 0;
   transform: rotate(180deg);
-  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 43 31'%3E%3Cg transform='scale(1,-1) translate(0,-31)'%3E%3Cpath d='M18.459 0V18.25H9.33399L15.4173 30.4167H6.29232L0.208984 18.25V0H18.459ZM42.7923 0V18.25H33.6673L39.7507 30.4167H30.6257L24.5423 18.25V0H42.7923Z' fill='%2390C6CD'/%3E%3C/g%3E%3C/svg%3E");
-          mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 43 31'%3E%3Cg transform='scale(1,-1) translate(0,-31)'%3E%3Cpath d='M18.459 0V18.25H9.33399L15.4173 30.4167H6.29232L0.208984 18.25V0H18.459ZM42.7923 0V18.25H33.6673L39.7507 30.4167H30.6257L24.5423 18.25V0H42.7923Z' fill='%2390C6CD'/%3E%3C/g%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 43 31'%3E%3Cg transform='scale(1,-1) translate(0,-31)'%3E%3Cpath d='M18.459 0V18.25H9.33399L15.4173 30.4167H6.29232L0.208984 18.25V0H18.459ZM42.7923 0V18.25H33.6673L39.7507 30.4167H30.6257L24.5423 18.25V0H42.7923Z' fill='%2390C6CD'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 #sc-doctors {
@@ -2305,8 +2266,7 @@ p, .text-body {
   width: 100%;
   height: 100%;
   display: block;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   aspect-ratio: 1/1;
   border-radius: 0.375rem;
 }
@@ -2418,7 +2378,10 @@ body.main #hd:not(.scrolled) .nav-list > li > .sub {
   z-index: 100;
   width: 100%;
   background-color: #fff;
+  -webkit-transition: height 0.2s linear 0.1s, -webkit-transform 0.2s linear;
+  transition: height 0.2s linear 0.1s, -webkit-transform 0.2s linear;
   transition: transform 0.2s linear, height 0.2s linear 0.1s;
+  transition: transform 0.2s linear, height 0.2s linear 0.1s, -webkit-transform 0.2s linear;
 }
 #hd.active {
   transition: transform 0.3s ease;
@@ -2440,9 +2403,8 @@ body.main #hd:not(.scrolled) .nav-list > li > .sub {
   width: 100%;
   height: 100lvh;
   background-color: transparent;
-  transition: background-color 0.2s ease-in-out, -webkit-backdrop-filter 0.2s ease-in-out;
+  -webkit-transition: background-color 0.2s ease-in-out, backdrop-filter 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out, backdrop-filter 0.2s ease-in-out;
-  transition: background-color 0.2s ease-in-out, backdrop-filter 0.2s ease-in-out, -webkit-backdrop-filter 0.2s ease-in-out;
   pointer-events: none;
 }
 #hd .hd-group {
@@ -2459,9 +2421,9 @@ body.main #hd:not(.scrolled) .nav-list > li > .sub {
   left: 20px;
   z-index: 7;
 }
-@media (max-width: 768px) {
+@media (max-width: 575px) {
   #hd .hd-group .hd-logo svg {
-    width: 130px;
+    width: 60px;
   }
 }
 #hd .hd-group .hd-nav {
@@ -2482,8 +2444,12 @@ body.main #hd:not(.scrolled) .nav-list > li > .sub {
     border-top: 95px solid transparent;
     background-color: #fff;
     visibility: hidden;
+    -webkit-transform: translateX(100%);
     transform: translateX(100%);
+    -webkit-transition: visibility 0ms linear 0.3s, -webkit-transform 0.3s;
+    transition: visibility 0ms linear 0.3s, -webkit-transform 0.3s;
     transition: transform 0.3s, visibility 0ms linear 0.3s;
+    transition: transform 0.3s, visibility 0ms linear 0.3s, -webkit-transform 0.3s;
     pointer-events: none;
   }
 }
@@ -2591,14 +2557,15 @@ body.main #hd:not(.scrolled) .nav-list > li > .sub {
   background-color: #fff;
 }
 #hd .hd-group .hd-nav.open {
+  -webkit-transform: translateX(0);
   transform: translateX(0);
-  transition: transform 0.3s, visibility 0ms linear 0ms;
+  -webkit-transition: visibility 0ms linear 0ms, -webkit-transform 0.3s;
+  transition: transform 0.3s, visibility 0ms linear 0ms, -webkit-transform 0.3s;
   visibility: visible;
   pointer-events: auto;
 }
 #hd .hd-group .hd-nav.open + .hd-dim {
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   background-color: rgba(0, 0, 0, 0.5);
 }
 #hd .hd-group .hd-sub-nav {
@@ -2645,6 +2612,11 @@ body.main #hd:not(.scrolled) .nav-list > li > .sub {
   font-size: 18px;
   font-weight: 400;
   color: #222;
+}
+@media (max-width: 991px) {
+  #hd .hd-group .hd-sub-nav .lang-btn-wrap .lang-txt {
+    font-size: 16px;
+  }
 }
 #hd .hd-group .hd-sub-nav .lang-btn-wrap .btn-list {
   position: absolute;
@@ -2736,7 +2708,7 @@ body.menu-open {
 
 .quick-group {
   position: fixed;
-  left: 10px;
+  left: 0px;
   bottom: 10px;
   z-index: 7;
   pointer-events: none;
@@ -2783,6 +2755,11 @@ body.menu-open {
 }
 .quick-group .quick-area .quick-menu li a.quick-item.active {
   width: 160px;
+}
+@media (max-width: 991px) {
+  .quick-group .quick-area .quick-menu li a.quick-item.active {
+    width: 50px !important;
+  }
 }
 .quick-group .quick-area .quick-menu li a.quick-item.active .text {
   opacity: 1;

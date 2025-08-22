@@ -75,8 +75,8 @@ body.main #hd:not(.scrolled) .nav-list > li > .sub {
       left: 20px;
       z-index: 7;
       svg {
-        @media (max-width: 768px) {
-          width: 130px;
+        @media (max-width: 575px) {
+          width: 60px;
         }
       }
     }
@@ -280,6 +280,9 @@ body.main #hd:not(.scrolled) .nav-list > li > .sub {
           font-size: 18px;
           font-weight: 400;
           color: $basicColor;
+          @media (max-width: 991px) {
+            font-size: 16px;
+          }
         }
 
         .btn-list {
@@ -386,7 +389,7 @@ body.menu-open {
 
 .quick-group {
   position: fixed;
-  left: 10px;
+  left: 0px;
   bottom: 10px;
   z-index: 7;
   pointer-events: none;
@@ -437,6 +440,9 @@ body.menu-open {
           // JS에서 붙여주는 상태
           &.active {
             width: 160px;
+            @media(max-width: 991px){
+              width: 50px !important;
+            }
 
             .text {
               opacity: 1;
@@ -448,6 +454,18 @@ body.menu-open {
     }
   }
 }
+
+// @media (max-width: 991px) {
+//   .quick-group .quick-area .quick-menu li a.quick-item,
+//   .quick-group .quick-area .quick-menu li a.quick-item.active {
+//     width: 50px !important;
+//     transition: none !important;
+//   }
+
+//   .quick-group .quick-area .quick-menu li a.quick-item .text {
+//     display: none !important;
+//   }
+// }
 
 .quick-group.active {
   pointer-events: auto;
