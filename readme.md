@@ -61,17 +61,20 @@ soraclinic-global/
 │   │   ├── ico.png
 │   │   ├── logo.png
 │   │   └── og_img02.png
-├── css/
-│   ├── common.css
-│   ├── event-page.css
-│   ├── filler-botox-page.css
-│   ├── font.css
-│   ├── global.css
-│   ├── layout.css
+├── scss/
+│   ├── _components.scss
+│   ├── _global.scss
+│   ├── _layout.scss
+│   ├── _mingyu.scss
+│   ├── _mixins.scss
+│   ├── _reset.scss
+│   ├── _section.scss
+│   ├── _swiper.scss
+│   ├── _typography.scss
+│   ├── _variables.scss
 │   ├── main.css
-│   ├── mingyu.css
-│   ├── reset.css
-│   └── sanna.css
+│   ├── main.min.css
+│   └── main.scss
 ├── js/
 │   ├── header.js
 │   └── swiper.js

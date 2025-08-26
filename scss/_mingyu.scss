@@ -1,15 +1,41 @@
+/* 메인에서만 기본은 투명 */
+body.main #hd {
+  background-color: transparent;
+  // transition: background-color 0.3s ease;
+}
+
+/* 스크롤 상태 → 흰색 */
+body.main #hd.scrolled {
+  background-color: #fff;
+}
+
+/* 서브메뉴 기본 흰색 */
+.nav-list > li > .sub {
+  background-color: #fff;
+  // transition: background-color 0.3s ease;
+}
+
+/* 메인 최상단 + header가 투명일 때 → 서브메뉴도 투명 */
+body.main #hd:not(.scrolled) .nav-list > li > .sub {
+  background-color: transparent;
+}
+
 #hd {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
   width: 100%;
+  // border-bottom: 1px solid $colorSecondary;
   background-color: #fff;
   -webkit-transition: height 0.2s linear 0.1s, -webkit-transform 0.2s linear;
   transition: height 0.2s linear 0.1s, -webkit-transform 0.2s linear;
   transition: transform 0.2s linear, height 0.2s linear 0.1s;
   transition: transform 0.2s linear, height 0.2s linear 0.1s, -webkit-transform 0.2s linear;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+  &.active {
+    transition: transform 0.3s ease;
+  }
 
   &.hide {
     transform: translateY(-100%);
@@ -22,10 +48,20 @@
     transform: translateY(0) !important;
   }
 
+  .hd-dim {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    width: 100%;
+    height: 100lvh;
+    background-color: transparent;
+    -webkit-transition: background-color .2s ease-in-out, backdrop-filter .2s ease-in-out;
+    transition: background-color .2s ease-in-out, backdrop-filter .2s ease-in-out;
+    pointer-events: none;
+  }
+
   .hd-group {
-    // display: flex;
-    // justify-content: space-between;
-    // align-items: center;
     position: relative;
     max-width: 1440px;
     margin: 0 auto;
@@ -37,13 +73,18 @@
       top: 50%;
       transform: translateY(-50%);
       left: 20px;
-      z-index: 20;
+      z-index: 7;
+      svg {
+        @media (max-width: 575px) {
+          width: 60px;
+        }
+      }
     }
 
     .hd-nav {
       display: flex;
       justify-content: center;
-      @media(max-width: 992px){
+      @media(max-width: 991px){
         justify-content: start;
         position: fixed;
         top: 0;
@@ -51,7 +92,7 @@
         z-index: 10;
         overflow: auto;
         overscroll-behavior-y: contain;
-        width: 80vw;
+        width: clamp(40vw, 80vw - 10vw, 80vw);
         height: 100lvh;
         border-top: 95px solid transparent;
         background-color: #fff;
@@ -66,13 +107,13 @@
       }
 
       .nav-area {
-        @media (max-width: 992px) {
+        @media (max-width: 991px) {
           width: 100%;
         }
         .nav-list {
           display: flex;
-          color: $colorDesc;
-          @media (max-width: 992px) {
+          color: $basicColor;
+          @media (max-width: 991px) {
             flex-direction: column;
             align-items: start;
           }
@@ -83,7 +124,7 @@
           align-items: center;
           height: 95px;
           padding: 0 15px;
-          @media (max-width: 992px) {
+          @media (max-width: 991px) {
             flex-direction: column;
             align-items: center;
             width: 100%;
@@ -94,6 +135,27 @@
               padding: 15px 20px;
             }
           }
+          .nav-link {
+            &:hover {
+              color: $colorSecondary;
+            }
+          }
+        }
+
+        .hd-nav-wrap .top-menu {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .hd-nav-wrap .top-menu svg {
+          width: 24px;
+          height: 24px;
+          transition: transform 0.3s ease;
+        }
+
+        .hd-nav-wrap .top-menu.active svg {
+          transform: rotate(180deg);
         }
   
         .depth1-list,
@@ -108,14 +170,25 @@
           top: 95px;
           left: 50%;
           transform: translateX(-50%);
-          background-color: #fff;
           transition: 0.5s;
         }
   
         .depth1-item {
+          position: relative;
           padding: 15px;
-          @media (max-width: 992px) {
+          @media (max-width: 991px) {
             padding: unset;            
+            &:before {
+              content: '';
+              position: absolute;
+              width: 5px;
+              height: 5px;
+              top: 50%;
+              left: 0;
+              border-radius: 50%;
+              background-color: $colorDesc;
+              transform: translateY(-50%);
+            }
           }
         }
   
@@ -123,31 +196,38 @@
           display: none;
           &.show {
             display: flex;
-            @media (max-width: 992px) {
+            @media (max-width: 991px) {
               position: unset;
               flex-direction: column;
               width: calc(100% - 40px);
               margin: 0 20px;
-              border: 1px solid #000;
               border-radius: 10px;
               transform: unset;
               transition: 0.5s;
             }
+          }
+          &.active {
+            background-color: #fff;
           }
         }
       }
 
     }
 
-    .hd-nav.open {
-      -webkit-transform: translateX(0);
-      transform: translateX(0);
-      -webkit-transition: visibility 0ms linear 0ms,-webkit-transform .3s;
-      transition: visibility 0ms linear 0ms,-webkit-transform .3s;
-      transition: transform .3s,visibility 0ms linear 0ms;
-      transition: transform .3s,visibility 0ms linear 0ms,-webkit-transform .3s;
-      visibility: visible;
-      pointer-events: auto;
+    .hd-nav {
+      &.open {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        -webkit-transition: visibility 0ms linear 0ms, -webkit-transform 0.3s;
+        transition: transform 0.3s, visibility 0ms linear 0ms, -webkit-transform 0.3s;
+        visibility: visible;
+        pointer-events: auto;
+
+        + .hd-dim {
+          backdrop-filter: blur(10px);
+          background-color: rgba(0, 0, 0, 0.5);
+        }
+      }
     }
 
     .hd-sub-nav {
@@ -163,7 +243,7 @@
         padding: 10px 15px;
         border: 1px solid $primaryColor2;
         border-radius: 30px;
-        color: $colorDesc;
+        color: $basicColor;
         transition: 0.3s ease-in-out;
         &:hover {
           color:#fff;
@@ -174,28 +254,35 @@
 
       .lang-btn-wrap {
         position: relative;
-        &:hover {
-          svg path,
-          .lang-txt {
-            stroke: $primaryColor2;
-            color: $primaryColor2; 
-            transition: stroke 0.3s, color 0.3s;
-          }
-        }
         .lang-btn {
           display: flex;
           align-items: center;
+          &:hover {
+            svg path,
+            .lang-txt {
+              stroke: $colorSecondary;
+              color: $colorSecondary;
+              transition: stroke 0.3s, color 0.3s;
+              // &:focus {
+              //   color: $colorSecondary;
+              // }
+            }
+          }
           svg {
             width: 24px;
             height: 24px;
           }
         }
 
+
         .lang-txt {
           display: inline-block;
-          margin: 0 5px;
           font-size: 18px;
           font-weight: 400;
+          color: $basicColor;
+          @media (max-width: 991px) {
+            font-size: 16px;
+          }
         }
 
         .btn-list {
@@ -229,24 +316,22 @@
           font-size: 18px;
           font-weight: 400;
           transition: all 0.3s;
-          color: $colorDesc;
+          color: $basicColor;
           &:hover {
-            color: $primaryColor2;
+            color: $colorSecondary;
           }
         }
       }
     }
 
     .hd-mo-nav-btn {
+      display: none;
       position: relative;
       cursor: pointer;
       .trigger {
         display: block;
         width: 24px;
-        height: 14px;
-        // position: absolute;
-        // right: 20px;
-        // top: 20px;
+        height: 18px;
       }
       .trigger span {
         position: absolute;
@@ -278,8 +363,8 @@
         top: 50%;
         transform: rotate(-45deg)
       }
-      @media (min-width:992px) {
-        display: none;
+      @media (max-width:991px) {
+        display: block;
       }
     }
 
@@ -287,8 +372,10 @@
 
   .mo-sub-menu {
     height: 60px;
+    // border-top: 1px solid $colorSecondary;
     .nav-link {
-      padding: 20px;
+      padding: 15px 20px;
+      font-weight: 700;
     }
   }
 }
@@ -298,5 +385,137 @@ body.menu-open {
   height: 100vh;
 }
 
+//quick menu
+
+.quick-group {
+  position: fixed;
+  left: 0px;
+  bottom: 10px;
+  z-index: 7;
+  pointer-events: none;
+  transform: translateY(30px);
+  transition: 0.5s;
+  opacity: 0;
+
+  .quick-area {
+    .quick-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+
+      li {
+        position: relative;
+        width: 50px;
+        height: 50px;
+
+        a.quick-item {
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          width: 50px;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          background: $primaryColor2;
+          border-radius: 10px;
+          color: #fff;
+          overflow: hidden;
+          white-space: nowrap;
+          transition: width 0.3s ease;
+
+          .icon {
+            width: 24px;
+            height: 24px;
+            margin: 0 13px;
+            flex-shrink: 0;
+          }
+
+          .text {
+            opacity: 0;
+            transform: translateX(10px);
+            font-size: 14px;
+            padding-right: 12px;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+          }
+
+          // JS에서 붙여주는 상태
+          &.active {
+            width: 160px;
+            @media(max-width: 991px){
+              width: 50px !important;
+            }
+
+            .text {
+              opacity: 1;
+              transform: translateX(0);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.quick-group.active {
+  pointer-events: auto;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+//main section sc-contact
+#sc-contact {
+  .contact-group {
+    padding: clamp(20px, 20px + (40 - 20) * (100vw - 320px) / (1600), 40px);
+    .contact-area {
+      flex: 1;
+    }
+
+    .google-map-area {
+      flex: 1;
+      iframe {
+        height: clamp(250px, 250px + (400 - 250) * (100vw - 320px) / (1600), 400px);
+      }
+    }
+  }
+}
+
 //footer
+
+#ft {
+  background: #E6F7F9;
+  .ft-group {
+    .ft-info-group {
+      color: $colorSecondary;
+      .info-group-left {
+        font-size: 14px;
+        font-weight: $fw300;
+        @media (max-width: 768px) {
+          text-align: center;
+        }
+      }
+      .info-group-right {
+        font-size: 12px;
+        font-weight: $fw400;
+        text-align: end;
+        @media (max-width: 768px) {
+          text-align: center;
+        }
+      }
+    }
+
+    .ft-social img {
+        display: block;
+        width: 24px;
+        height: 24px;
+    }
+  }
+}
+
+
+.ft-font-color {
+    color: $colorSecondary;
+}
 

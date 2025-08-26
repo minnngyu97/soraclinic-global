@@ -1,4 +1,4 @@
-@import url(global.css);
+/* @import url(global.css);
 
 body {
   font-family: var(--font-base);
@@ -10,7 +10,6 @@ body {
   padding: 0;
 }
 
-/* === Title Elements === */
 .tit {
   font-size: 2rem;
   font-weight: var(--fw-600);
@@ -37,7 +36,6 @@ body {
   font-weight: var(--fw-700);
 }
 
-/* === Utility === */
 .text-muted {
   color: var(--color-muted);
 }
@@ -60,7 +58,6 @@ body {
   border: 1px solid var(--border-dark);
 }
 
-/* 폰트 weight*/
 .fw100 {
   font-weight: 100 !important;
 }
@@ -114,14 +111,12 @@ body {
   top: 0.5rem;
 }
 
-/* 메인 내비게이션 */
 .nav {
   font-size: var(--navi-menu);
   font-weight: var(--fw-300);
   letter-spacing: 1.1px;
 }
 
-/* 제목 */
 .content-title {
   font-size: var(--event-tit);
   font-weight: var(--fw-600);
@@ -129,14 +124,12 @@ body {
   margin-bottom: 8px;
 }
 
-/*섹션 타이틀 */
 .section-title {
   font-size: var(--sub-h4);
   font-weight: var(--fw-500);
   color: #fff;
 }
 
-/* 푸터 */
 footer {
   color:var(--basic-color);
 }
@@ -150,7 +143,6 @@ footer {
   margin: -1px;
 }
 
-/* 공통 클래스 */
 .active-color{
   color:var(--color-primary)
 }
@@ -178,7 +170,6 @@ footer {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-/* 키프레임 */
 @keyframes gradient-shift {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -192,4 +183,4 @@ footer {
 @keyframes glow {
   0% { box-shadow: 0 0 8px hsla(174, 95%, 45%, 0.2); }
   100% { box-shadow: 0 0 16px hsla(174, 95%, 45%, 0.4); }
-}
+} */
